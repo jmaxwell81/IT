@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_291066_it.GetWorkOrders</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>GetWorkOrders</name>
+        <script><![CDATA[var GetWorkOrders = Class.create();
+GetWorkOrders.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+	populateWorOrders : function() {
+		gs.info("CALLING TO THE populateWorOrders");
+		try { 
+			 var r = new sn_ws.RESTMessageV2('x_291066_it.GetAllWorkOrders', 'Default GET');
+			 var response = r.execute();			 
+			 var httpStatus = response.getStatusCode();	
+		
+			if (httpStatus === 200 ) {				
+				var responseBody = JSON.parse(response.getBody());		
+				var workOrderRecord;
+				
+				for (var index = 0; index < responseBody.length ; index++) {			
+					workOrderRecord = new GlideRecord("x_291066_it_wo");
+					workOrderRecord.initialize();
+
+					// Check if the value already exists on WorkOrder table.
+					if(workOrderRecord.get(responseBody[index].Id)) {						
+						continue;
+					}
+					
+					// Saving in ITService table.
+					workOrderRecord.wo_id = responseBody[index].Id;
+					workOrderRecord.summary = responseBody[index].Summary;
+					workOrderRecord.task_type_name = responseBody[index]["Task_Type_Record.Name"];					
+					//workOrderRecord.requested_start = responseBody[index].Requested_Start;
+					//workOrderRecord.requested_end = responseBody[index].Requested_End;					
+					workOrderRecord.site_name = responseBody[index]["Site.Name"];
+					workOrderRecord.status = responseBody[index].Status;
+					workOrderRecord.service_request_name = responseBody[index]["Service_Request.Name"];
+					workOrderRecord.dispatcher_name = responseBody[index]["Dispatcher.Name"];					
+					workOrderRecord.technician_name = responseBody[index]["Technician.Name"];					
+					workOrderRecord.insert();	
+				}
+			}
+		}
+		catch(ex) {
+			ge.error(ex.message);
+		}
+	},
+	
+    type: 'GetWorkOrders'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-11-19 23:01:56</sys_created_on>
+        <sys_id>30a49bfa4f7de300cd558c318110c76f</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>GetWorkOrders</sys_name>
+        <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
+        <sys_update_name>sys_script_include_30a49bfa4f7de300cd558c318110c76f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-11-20 00:47:02</sys_updated_on>
+    </sys_script_include>
+</record_update>
