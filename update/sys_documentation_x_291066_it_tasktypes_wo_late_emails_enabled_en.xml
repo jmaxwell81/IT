@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="wo_late_emails_enabled" label="WO_Late_Emails_Enabled" language="en" table="x_291066_it_tasktypes">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>wo_late_emails_enabled</element>
+            <help/>
+            <hint/>
+            <label>WO_Late_Emails_Enabled</label>
+            <language>en</language>
+            <name>x_291066_it_tasktypes</name>
+            <plural>WO_Late_Emails_Enabled</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-11-22 23:40:26</sys_created_on>
+            <sys_id>6e0bb23b4f71a700cd558c318110c7b4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>WO_Late_Emails_Enabled</sys_name>
+            <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
+            <sys_update_name>sys_documentation_x_291066_it_tasktypes_wo_late_emails_enabled_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-11-22 23:40:26</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

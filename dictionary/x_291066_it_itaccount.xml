@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="ITAccount" max_length="40" name="x_291066_it_itaccount" type="collection">
+        <element label="Id" max_length="40" name="id" type="string"/>
+        <element label="IT_Asset" max_length="40" name="it_asset" type="string"/>
+        <element label="IT_Asset.Owner.Id" max_length="40" name="it_asset_owner_id" type="string"/>
+        <element label="IT_Asset.Owner.Name" max_length="40" name="it_asset_owner_name" type="string"/>
+        <element label="Name" max_length="40" name="name" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Parent_Account" max_length="40" name="parent_account" type="string"/>
+        <element label="Parent_Account.Name" max_length="40" name="parent_account_name" type="string"/>
+        <element label="Short_Description" max_length="40" name="short_description" type="string"/>
+        <element label="Type" max_length="40" name="type" type="string"/>
+        <element label="Usage_Type" max_length="40" name="usage_type" type="string"/>
+    </element>
+</database>

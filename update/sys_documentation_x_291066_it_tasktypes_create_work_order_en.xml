@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="create_work_order" label="Create_Work_Order" language="en" table="x_291066_it_tasktypes">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>create_work_order</element>
+            <help/>
+            <hint/>
+            <label>Create_Work_Order</label>
+            <language>en</language>
+            <name>x_291066_it_tasktypes</name>
+            <plural>Create_Work_Orders</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-11-22 23:40:26</sys_created_on>
+            <sys_id>a20bb23b4f71a700cd558c318110c7b3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Create_Work_Order</sys_name>
+            <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
+            <sys_update_name>sys_documentation_x_291066_it_tasktypes_create_work_order_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-11-22 23:40:26</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

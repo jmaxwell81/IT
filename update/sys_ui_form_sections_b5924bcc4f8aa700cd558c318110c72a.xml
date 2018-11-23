@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="b5924bcc4f8aa700cd558c318110c72a" sys_domain="global" table="x_291066_it_tasktypes" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-11-23 18:51:55</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3d924bcc4f8aa700cd558c318110c72c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_291066_it_tasktypes" name="x_291066_it_tasktypes" sys_domain="global" view="Default view">b5924bcc4f8aa700cd558c318110c72a</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_291066_it_tasktypes" sys_domain="global" view="Default view">b1f0c34c4f8aa700cd558c318110c7ea</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-11-23 18:51:55</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_291066_it_tasktypes</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-11-23 18:51:55</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>b5924bcc4f8aa700cd558c318110c72a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_291066_it_tasktypes</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
+            <sys_update_name>sys_ui_form_sections_b5924bcc4f8aa700cd558c318110c72a</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-11-23 18:51:55</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

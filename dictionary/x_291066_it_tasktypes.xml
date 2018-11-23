@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="TaskTypes" max_length="40" name="x_291066_it_tasktypes" type="collection">
+        <element label="Acknowledgement_Enabled" max_length="40" name="acknowledgement_enabled" type="boolean"/>
+        <element label="Approval_Enabled" max_length="40" name="approval_enabled" type="boolean"/>
+        <element label="Approval_Reminder_in" max_length="40" name="approval_reminder_in" type="string"/>
+        <element label="Auto_Acknowledge" max_length="40" name="auto_acknowledge" type="boolean"/>
+        <element label="Auto_Approve_Invoice" max_length="40" name="auto_approve_invoice" type="boolean"/>
+        <element label="Auto_Execute" max_length="40" name="auto_execute" type="boolean"/>
+        <element label="Base_Object" max_length="40" name="base_object" type="string"/>
+        <element label="Can_Create_Child_Requests_in_Portal" max_length="40" name="can_create_child_requests_in_portal" type="boolean"/>
+        <element label="Can_Have_Child_Requests" max_length="40" name="can_have_child_requests" type="boolean"/>
+        <element label="Category" max_length="40" name="category" type="string"/>
+        <element label="Channel" max_length="40" name="channel" type="string"/>
+        <element label="Contract_Task_Type" max_length="40" name="contract_task_type" type="string"/>
+        <element label="CreatedById" max_length="40" name="createdbyid" type="string"/>
+        <element label="CreatedDate" max_length="40" name="createddate" type="glide_date_time"/>
+        <element choice="1" default="service now" label="CreatedOn" max_length="40" name="createdon" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Service Now" sequence="0" value="service now"/>
+                <element inactive_on_update="false" label="Site Hands" sequence="1" value="site hands"/>
+            </choice>
+        </element>
+        <element label="Create_Work_Order" max_length="40" name="create_work_order" type="boolean"/>
+        <element label="Custom_Form" max_length="40" name="custom_form" type="string"/>
+        <element label="Disable_Automatic_Offer_Creation" max_length="40" name="disable_automatic_offer_creation" type="boolean"/>
+        <element label="Dispatch_Reminder" max_length="40" name="dispatch_reminder" type="string"/>
+        <element label="Editable_by_PM" max_length="40" name="editable_by_pm" type="boolean"/>
+        <element label="Enable_Bundling" max_length="40" name="enable_bundling" type="boolean"/>
+        <element label="Enable_Over_Estimated_Time_Emails" max_length="40" name="enable_over_estimated_time_emails" type="boolean"/>
+        <element label="Id" max_length="40" name="id" type="string"/>
+        <element label="Is_Deprecated" max_length="40" name="is_deprecated" type="boolean"/>
+        <element label="Is_for_Project_Management_Use" max_length="40" name="is_for_project_management_use" type="boolean"/>
+        <element label="Is_Project_Container" max_length="40" name="is_project_container" type="boolean"/>
+        <element label="Job_Completion_Form" max_length="40" name="job_completion_form" type="string"/>
+        <element label="LastModifiedById" max_length="40" name="lastmodifiedbyid" type="string"/>
+        <element label="LastModifiedDate" max_length="40" name="lastmodifieddate" type="glide_date_time"/>
+        <element label="Name" max_length="40" name="name" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="External_Id" max_length="40" name="number" read_only="true" type="string"/>
+        <element label="OwnerId" max_length="40" name="ownerid" type="string"/>
+        <element label="Send_CSAT_to_Client_Ticket_Owner" max_length="40" name="send_csat_to_client_ticket_owner" type="boolean"/>
+        <element label="Send_CSAT_to_Submitter" max_length="40" name="send_csat_to_submitter" type="boolean"/>
+        <element label="Service_Domain" max_length="40" name="service_domain" type="string"/>
+        <element label="Short_Description" max_length="40" name="short_description" type="string"/>
+        <element label="Show_in_Default_Service_Catalog" max_length="40" name="show_in_default_service_catalog" type="boolean"/>
+        <element label="SREQ_Owner_As_PM" max_length="40" name="sreq_owner_as_pm" type="boolean"/>
+        <element label="SystemModstamp" max_length="40" name="systemmodstamp" type="glide_date_time"/>
+        <element label="Valid_for_Service_Request" max_length="40" name="valid_for_service_request" type="boolean"/>
+        <element label="Valid_for_Work_Order" max_length="40" name="valid_for_work_order" type="boolean"/>
+        <element label="WO_Late_Emails_Enabled" max_length="40" name="wo_late_emails_enabled" type="boolean"/>
+        <element label="WO_Upcoming_Emails_Enabled" max_length="40" name="wo_upcoming_emails_enabled" type="boolean"/>
+    </element>
+</database>

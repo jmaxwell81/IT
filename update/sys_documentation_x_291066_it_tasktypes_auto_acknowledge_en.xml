@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="auto_acknowledge" label="Auto_Acknowledge" language="en" table="x_291066_it_tasktypes">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>auto_acknowledge</element>
+            <help/>
+            <hint/>
+            <label>Auto_Acknowledge</label>
+            <language>en</language>
+            <name>x_291066_it_tasktypes</name>
+            <plural>Auto_Acknowledges</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-11-22 23:30:02</sys_created_on>
+            <sys_id>1aa8b6b74f71a700cd558c318110c716</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Auto_Acknowledge</sys_name>
+            <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
+            <sys_update_name>sys_documentation_x_291066_it_tasktypes_auto_acknowledge_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-11-22 23:30:02</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

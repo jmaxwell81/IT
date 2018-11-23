@@ -2,12 +2,12 @@
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>package_private</access>
         <active>true</active>
-        <api_name>x_291066_it.GetServiceRequests</api_name>
+        <api_name>x_291066_it.ServiceRequestManager</api_name>
         <client_callable>true</client_callable>
         <description/>
-        <name>GetServiceRequests</name>
-        <script><![CDATA[var GetServiceRequests = Class.create();
-GetServiceRequests.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+        <name>ServiceRequestManager</name>
+        <script><![CDATA[var ServiceRequestManager = Class.create();
+ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
 	populateServiceRequests : function() {		
 		try {
@@ -25,17 +25,34 @@ GetServiceRequests.prototype = Object.extendsObject(global.AbstractAjaxProcessor
 					gr.initialize();				
 					
 					// Saving in ITService table.
+					gr.u_id = responseBody[index].Id;
 					gr.u_account = responseBody[index].Account;
+					gr.u_account_name = responseBody[index]["Account.Name"];
+					
 					gr.u_site = responseBody[index].Site;
-					gr.u_task_type = responseBody[index].Task_Type_Record;
-					gr.u_summary = responseBody[index].Summary;
-					gr.u_sreq_id = responseBody[index].Name;
-					gr.u_requested_by = responseBody[index].Requested_By;
-					gr.u_task_type_name = responseBody[index]["Task_Type_Record.Name"];
 					gr.u_site_name = responseBody[index]["Site.Name"];
+					gr.u_site_country = responseBody[index]["Site.Country"];
+					gr.u_site_state_province = responseBody[index]["Site.State_Province"];
+					gr.u_site_city = responseBody[index]["Site.City"];
+					gr.u_site_street = responseBody[index]["Site.Street"];
+					gr.u_site_timezone = responseBody[index]["Site.Timezone"];
+					gr.u_site_zippostalcode = responseBody[index]["Site.Zip_Postal_Code"];
+					
+					gr.u_task_type = responseBody[index]["Task_Type_Record"];
+					gr.u_task_type_name = responseBody[index]["Task_Type_Record.Name"];
+					gr.u_task_type_record_category = responseBody[index]["Task_Type_Record.Category"];					
+					
+					gr.u_summary = responseBody[index].Summary;
 					gr.u_status = responseBody[index].Status;
-					gr.u_start = responseBody[index].Requested_Start;
-					gr.u_requested_end = responseBody[index].Requested_End;					
+					gr.u_sreq_id = responseBody[index].Name;
+					
+					gr.u_requested_by = responseBody[index]["Requested_By"];
+					gr.u_requested_by_email = responseBody[index]["Requested_By.Email"];
+					gr.u_requested_by_name = responseBody[index]["Requested_By.Name"];
+					
+					gr.start = responseBody[index]["Requested_Start"];
+					gr.requested_end = responseBody[index]["Requested_End"];
+					gr.submitted_on = new GlideDateTime();
 					gr.insert();																				
 				}		
 			}
@@ -46,19 +63,73 @@ GetServiceRequests.prototype = Object.extendsObject(global.AbstractAjaxProcessor
 		}		
 	},
 	
-    type: 'GetServiceRequests'
+	createServiceRequest: function() {
+		try {
+			var r = new sn_ws.RESTMessageV2('x_291066_it.CreateServiceRequest', 'Default POST');
+			var sreq = this.getParameter("sreq");
+			var sreqObject = JSON.parse(sreq);
+			
+			if (!this.isCreatedOnServiceNow(sreqObject.task)) {
+				//gs.info("createServiceRequest --> " + sreq);
+				var body = this.getValidInputFields(sreqObject);
+				//gs.info(JSON.stringify(body));
+				if (Object.keys(body).length === 0 && body.constructor === Object){
+					throw "Some mandatory field is empty or null, Please check it";
+				}
+
+				r.setRequestHeader("Content-Type", "application/json");
+				r.setRequestBody(JSON.stringify(body));
+
+				var response = r.execute();		
+				var httpStatus = response.getStatusCode();
+				var bodyContent = response.getBody();
+
+				gs.info("STATUS CODE: " + httpStatus);		
+				gs.info("BODY: " + bodyContent);
+			}
+			
+			
+		}
+		catch(ex) {
+			gs.error(ex);
+		}
+	},
+	
+	getValidInputFields: function(current) {
+// 		gs.info("FROM getValidInputFields!!!!");
+// 		gs.info("getValidInputFields ---> " + sreq);				
+		var account = current.account.toString();		
+		var task = current.task.toString();		
+		var site = current.site.toString();		
+		var summary = current.summary.toString();		
+
+		if(account && task && site && summary) {
+			return current;		
+		}
+		return {};
+	},
+	
+	isCreatedOnServiceNow: function(taskTypeId) {			
+		var taskTypeRecords = new GlideRecord("x_291066_it_tasktypes");		
+		taskTypeRecords.addQuery("id", taskTypeId);
+		taskTypeRecords.addQuery("createdon", "service now");
+		taskTypeRecords.query();	
+		return taskTypeRecords.next();
+	},
+	
+    type: 'ServiceRequestManager'
 });]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-11-19 21:02:14</sys_created_on>
         <sys_id>dbe97e7a4f3de300cd558c318110c732</sys_id>
-        <sys_mod_count>12</sys_mod_count>
-        <sys_name>GetServiceRequests</sys_name>
+        <sys_mod_count>60</sys_mod_count>
+        <sys_name>ServiceRequestManager</sys_name>
         <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
         <sys_update_name>sys_script_include_dbe97e7a4f3de300cd558c318110c732</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-11-20 17:37:23</sys_updated_on>
+        <sys_updated_on>2018-11-23 23:25:57</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>account</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages>Loading the accounts to its field on create new SREQ form.</messages>
+        <name>PopulateITAccountFields</name>
+        <order/>
+        <script><![CDATA[function onLoad() { 	
+    var accountsManager = new GlideAjax('ITAccountManager');
+	// Specify the getEmail method
+	accountsManager.addParam('sysparm_name','getAccounts');	
+	// Send the request to the server
+	accountsManager.getXML(populateAccounts);
+
+	//g_form.clearOptions('account');	
+
+	// When the response is back from the server
+	function populateAccounts(response) {		
+		var accounts = response.responseXML.documentElement.getAttribute("answer").evalJSON();		
+		//var accounts = [{"name":"test1"}, {"name":"test2"}, {"name":"test3"}, {"name":"test4"}];
+		console.log(accounts[0].name);
+		console.log(accounts[0].id);
+		console.log(accounts.length);
+		
+		//g_form.clearValue('u_requested_for_email');		
+ 		for (var i = 0; i < accounts.length; i++ ) {
+			g_form.addOption('account', accounts[i].id, accounts[i].name, i);			
+ 		}
+	}
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-11-21 22:34:18</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>81a1e9674f756700cd558c318110c71d</sys_id>
+        <sys_mod_count>33</sys_mod_count>
+        <sys_name>PopulateITAccountFields</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
+        <sys_update_name>sys_script_client_81a1e9674f756700cd558c318110c71d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-11-23 17:58:21</sys_updated_on>
+        <table>x_291066_it_sreq</table>
+        <type>onLoad</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

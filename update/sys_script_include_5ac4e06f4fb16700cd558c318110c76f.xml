@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_291066_it.ITAccountManager</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>ITAccountManager</name>
+        <script><![CDATA[var ITAccountManager = Class.create();
+ITAccountManager.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	populateItAccounts: function() {
+		 try {
+			var r = new sn_ws.RESTMessageV2('x_291066_it.GetITAccounts', 'Default GET');
+			var response = r.execute();			
+			
+			gs.info(response.getStatusCode());
+			
+			if(response.getStatusCode() === 200) {
+				var responseBody = JSON.parse(response.getBody());		
+				var gr;		
+
+				for (var index = 0; index < responseBody.length ; index++) {
+					gr = new GlideRecord("x_291066_it_itaccount");
+					gr.initialize();				
+					
+					// Saving in ITService table.
+					gs.info(responseBody[index].Name);
+					gr.it_asset = responseBody[index].IT_Asset;
+					gr.it_asset_owner_name = responseBody[index]["IT_Asset.Owner.Name"];
+					gr.it_asset_owner_id = responseBody[index]["IT_Asset.Owner.Id"];
+					gr.id = responseBody[index].Id;
+					gr.name = responseBody[index].Name;
+					gr.parent_account = responseBody[index].Parent_Account;
+					gr.parent_account_name = responseBody[index]["Parent_Account.Name"];
+					gr.short_description = responseBody[index].Short_Description;
+					gr.type = responseBody[index].Type;
+					gr.usage_type = responseBody[index].Usage_Type;					
+					gr.insert();																				
+				}		
+			}
+		}
+		catch(ex) {
+			 gs.error(ex.message);
+		}
+	},
+	
+	getAccounts: function() {
+		try {
+			var itAccountRecord = new GlideRecord("x_291066_it_itaccount");
+		
+			itAccountRecord.addQuery('it_asset','a1Zc000000CTzULEA1'); 
+			itAccountRecord.query();
+
+			var accounts = [];
+
+			while (itAccountRecord.next())
+			{
+				gs.info(itAccountRecord.name); 
+				accounts.push(
+					{
+						"name": itAccountRecord.name.toString(),
+						"id": itAccountRecord.id.toString()
+					}
+				);
+			}
+			//gs.info("GetAccounts ---> " + accounts[0].name);
+			//gs.info("GetAccounts ---> " + accounts[0].id);	
+			gs.info("GetAccounts ---> " + JSON.stringify(accounts));
+			return JSON.stringify(accounts);
+			
+		} catch(ex){
+			gs.error(ex.message);
+		}	
+	},
+	
+    type: 'ITAccountManager'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-11-21 18:16:03</sys_created_on>
+        <sys_id>5ac4e06f4fb16700cd558c318110c76f</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>ITAccountManager</sys_name>
+        <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
+        <sys_update_name>sys_script_include_5ac4e06f4fb16700cd558c318110c76f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-11-23 16:40:23</sys_updated_on>
+    </sys_script_include>
+</record_update>

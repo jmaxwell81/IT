@@ -1,19 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element label="SREQ" max_length="40" name="x_291066_it_sreq" type="collection">
-        <element label="Account" max_length="40" name="account" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" dependent="u_string_2" dependent_on_field="u_string_2" label="Account" max_length="40" name="account" type="string" use_dependent_field="true">
+            <choice>
+                <element dependent_value="a1Yc0000001rpApEAI" inactive_on_update="false" label="a1Yc0000001rpApEAI" value="a1Yc0000001rpApEAI"/>
+            </choice>
+        </element>
+        <element label="Account Name" max_length="40" name="account_name" type="string"/>
         <element label="Additional Site details" max_length="40" name="additional_site_details" type="string"/>
         <element label="Description" max_length="40" name="description" type="string"/>
+        <element label="Id" max_length="40" name="id" type="string"/>
         <element label="Requested By" max_length="40" name="requested_by" type="string"/>
+        <element label="Requested_By.Email" max_length="40" name="requested_by_email" type="string"/>
+        <element label="Requested_By.Name" max_length="40" name="requested_by_name" type="string"/>
         <element label="Requested End" max_length="40" name="requested_end" type="glide_date_time"/>
         <element label="Site" max_length="40" name="site" type="string"/>
+        <element label="Site City" max_length="40" name="site_city" type="string"/>
+        <element label="Site Country" max_length="40" name="site_country" type="string"/>
         <element label="Site Name" max_length="40" name="site_name" type="string"/>
+        <element label="Site Site Location Latitude" max_length="40" name="site_site_location_latitude" type="string"/>
+        <element label="Site Site Location Longitude" max_length="40" name="site_site_location_longitude" type="string"/>
+        <element label="Site State Province" max_length="40" name="site_state_province" type="string"/>
+        <element label="Site Street" max_length="40" name="site_street" type="string"/>
+        <element label="Site Timezone" max_length="40" name="site_timezone" type="string"/>
+        <element label="Site ZipPostalCode" max_length="40" name="site_zippostalcode" type="string"/>
         <element label="SREQ ID" max_length="40" name="sreq_id" type="string"/>
         <element label="Start" max_length="40" name="start" type="glide_date_time"/>
         <element label="Status" max_length="40" name="status" type="string"/>
         <element label="Submitted On" max_length="40" name="submitted_on" type="glide_date_time"/>
         <element label="Summary" max_length="40" name="summary" type="string"/>
-        <element label="Task Type" max_length="40" name="task_type" type="string"/>
+        <element choice="1" dependent="task_type_name" dependent_on_field="task_type_name" label="Task Type" max_length="40" name="task_type" type="string" use_dependent_field="true">
+            <choice>
+                <element inactive="true" inactive_on_update="true" label="a3Vc0000000bGjUEAU" sequence="0" value="a3Vc0000000bGjUEAU"/>
+                <element inactive="true" inactive_on_update="true" label="Choice 1" sequence="0" value="Choice 1"/>
+                <element inactive="true" inactive_on_update="true" label="a3Vc0000000bGw5EAE" sequence="1" value="a3Vc0000000bGw5EAE"/>
+                <element inactive="true" inactive_on_update="true" label="Choice 2" sequence="1" value="Choice 2"/>
+                <element inactive="true" inactive_on_update="true" label="a3Vc0000000bKsREAU" sequence="2" value="a3Vc0000000bKsREAU"/>
+                <element inactive="true" inactive_on_update="true" label="Choice 3" sequence="2" value="Choice 3"/>
+                <element inactive="true" inactive_on_update="true" label="a3Vc0000000IeReEAK" sequence="3" value="a3Vc0000000IeReEAK"/>
+                <element inactive="true" inactive_on_update="true" label="a3Vc0000000IeRZEA0" sequence="4" value="a3Vc0000000IeRZEA0"/>
+                <element inactive="true" inactive_on_update="true" label="a3Vc0000000IezjEAC" sequence="5" value="a3Vc0000000IezjEAC"/>
+                <element inactive="true" inactive_on_update="true" label="a3Vc0000000UbiyEAC" sequence="6" value="a3Vc0000000UbiyEAC"/>
+                <element inactive="true" inactive_on_update="true" label="a3Vc0000000UbscEAC" sequence="7" value="a3Vc0000000UbscEAC"/>
+                <element inactive="true" inactive_on_update="true" label="a3Vc0000000UbsXEAS" sequence="8" value="a3Vc0000000UbsXEAS"/>
+                <element inactive="true" inactive_on_update="true" label="a3Vc0000000UbwoEAC" sequence="9" value="a3Vc0000000UbwoEAC"/>
+                <element inactive="true" inactive_on_update="true" label="a3Vc0000000UbwtEAC" sequence="10" value="a3Vc0000000UbwtEAC"/>
+            </choice>
+        </element>
+        <element label="Task Type Category" max_length="40" name="task_type_category" type="string"/>
         <element label="Task Type Name" max_length="40" name="task_type_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Account" max_length="40" name="u_string_2" type="string"/>
         <index name="index">
             <element name="sreq_id"/>
         </index>
