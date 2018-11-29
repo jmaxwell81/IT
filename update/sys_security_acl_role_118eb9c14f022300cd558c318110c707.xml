@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-11-26 16:28:26</sys_created_on>
+        <sys_id>118eb9c14f022300cd558c318110c707</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_291066_it_sites.x_291066_it.sites_user</sys_name>
+        <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
+        <sys_security_acl display_value="x_291066_it_sites">118eb9c14f022300cd558c318110c704</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_118eb9c14f022300cd558c318110c707</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-11-26 16:28:26</sys_updated_on>
+        <sys_user_role display_value="x_291066_it.sites_user" name="x_291066_it.sites_user">d58e79c14f022300cd558c318110c7ea</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>

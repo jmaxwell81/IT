@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="Cost Allocations" section_id="315055254f462300cd558c318110c77f" sys_domain="global" table="x_291066_it_breakfix_customform" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>primary_cost_center</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-11-28 02:28:53</sys_created_on>
+            <sys_id>478195654f462300cd558c318110c775</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Cost Allocations" display_value="Cost Allocations" name="x_291066_it_breakfix_customform" sys_domain="global" view="Default view">315055254f462300cd558c318110c77f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-11-28 02:28:53</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>cost_allocation_1</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-11-28 02:28:53</sys_created_on>
+            <sys_id>c78195654f462300cd558c318110c775</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Cost Allocations" display_value="Cost Allocations" name="x_291066_it_breakfix_customform" sys_domain="global" view="Default view">315055254f462300cd558c318110c77f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-11-28 02:28:53</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-11-28 02:28:53</sys_created_on>
+            <sys_id>4b8195654f462300cd558c318110c775</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Cost Allocations" display_value="Cost Allocations" name="x_291066_it_breakfix_customform" sys_domain="global" view="Default view">315055254f462300cd558c318110c77f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-11-28 02:28:53</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>secondary_cost_center</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-11-28 02:28:53</sys_created_on>
+            <sys_id>cb8195654f462300cd558c318110c775</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Cost Allocations" display_value="Cost Allocations" name="x_291066_it_breakfix_customform" sys_domain="global" view="Default view">315055254f462300cd558c318110c77f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-11-28 02:28:53</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>cost_allocation_2</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-11-28 02:28:53</sys_created_on>
+            <sys_id>4f8195654f462300cd558c318110c775</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Cost Allocations" display_value="Cost Allocations" name="x_291066_it_breakfix_customform" sys_domain="global" view="Default view">315055254f462300cd558c318110c77f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-11-28 02:28:53</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Cost Allocations</caption>
+            <header>false</header>
+            <name>x_291066_it_breakfix_customform</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-11-28 02:23:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>315055254f462300cd558c318110c77f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Cost Allocations</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
+            <sys_update_name>sys_ui_section_315055254f462300cd558c318110c77f</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-11-28 02:23:37</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

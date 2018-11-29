@@ -31,6 +31,29 @@ GetServiceRequestById.prototype = {
 			gs.error(ex.message);
 		}
 	},
+	
+	// Using the new third endpoint
+	getServiceRequest: function(sreq_id) {
+		gs.info("FROM GetServiceRequestById METHOD!! " + sreq_id);
+		try {
+				
+			var r = new sn_ws.RESTMessageV2('x_291066_it.New_GetServiceRequestById', 'Default GET');			 
+			var result = null;
+			if (sreq_id) {								
+				r.setStringParameterNoEscape('sreq_id', sreq_id);
+				gs.info("BEFORE EXECUTING executeAsync!!!");
+				var response = r.executeAsync();
+				gs.info("TATUS CODE: " + response.getStatusCode());
+				if (response.getStatusCode() === 200) {			
+					result = JSON.parse(response.getBody());					
+				}
+			}			
+			return result;
+		}
+		catch(ex) {
+			gs.error(ex.message);
+		}
+	},
 
     type: 'GetServiceRequestById'
 };]]></script>
@@ -38,13 +61,13 @@ GetServiceRequestById.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-11-20 22:51:46</sys_created_on>
         <sys_id>918c18974f792700cd558c318110c7d5</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_name>GetServiceRequestById</sys_name>
         <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
         <sys_update_name>sys_script_include_918c18974f792700cd558c318110c7d5</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-11-21 01:01:24</sys_updated_on>
+        <sys_updated_on>2018-11-27 18:28:54</sys_updated_on>
     </sys_script_include>
 </record_update>

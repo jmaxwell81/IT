@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-11-28 01:22:15</sys_created_on>
+        <sys_id>3e4201a94f062300cd558c318110c703</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_291066_it_breakfix_customform.x_291066_it.breakfix_customform_user</sys_name>
+        <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
+        <sys_security_acl display_value="x_291066_it_breakfix_customform">f24201a94f062300cd558c318110c701</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_3e4201a94f062300cd558c318110c703</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-11-28 01:22:15</sys_updated_on>
+        <sys_user_role display_value="x_291066_it.breakfix_customform_user" name="x_291066_it.breakfix_customform_user">b64289254fc22300cd558c318110c7d4</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>

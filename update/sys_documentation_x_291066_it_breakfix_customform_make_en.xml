@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="make" label="Make" language="en" table="x_291066_it_breakfix_customform">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>make</element>
+            <help/>
+            <hint/>
+            <label>Make</label>
+            <language>en</language>
+            <name>x_291066_it_breakfix_customform</name>
+            <plural>Makes</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-11-28 01:45:45</sys_created_on>
+            <sys_id>c7a74d6d4f062300cd558c318110c779</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Make</sys_name>
+            <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
+            <sys_update_name>sys_documentation_x_291066_it_breakfix_customform_make_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-11-28 01:45:45</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

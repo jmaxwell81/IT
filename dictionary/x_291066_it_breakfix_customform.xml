@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="BreakFix_CustomForm" max_length="40" name="x_291066_it_breakfix_customform" type="collection">
+        <element comments="Enter Asset Tag" label="Asset Tag" max_length="40" name="asset_tag" type="string"/>
+        <element comments="Enter Assignee Group" label="Assignee Group" max_length="40" name="assignee_group" type="string"/>
+        <element choice="1" label="Category" max_length="40" name="category" type="string">
+            <choice>
+                <element inactive_on_update="false" label="AD HOC" sequence="0" value="ad hoc"/>
+                <element inactive_on_update="false" label="BAU" sequence="1" value="bau"/>
+                <element inactive_on_update="false" label="BAU Asset Inventory" sequence="2" value="bau asset inventory"/>
+                <element inactive_on_update="false" label="iCTO Asset Transfer" sequence="3" value="icto asset transfer"/>
+                <element inactive_on_update="false" label="Project Clean Sweep" sequence="4" value="project clean sweep"/>
+                <element inactive_on_update="false" label="RES" sequence="5" value="res"/>
+                <element inactive_on_update="false" label="Remediation" sequence="6" value="remediation"/>
+                <element inactive_on_update="false" label="Security Uplift" sequence="7" value="security uplift"/>
+                <element inactive_on_update="false" label="Quarterly Asset Inventory" sequence="8" value="quarterly asset inventory"/>
+                <element inactive_on_update="false" label="West Site Visit Project" sequence="9" value="west site visit project"/>
+            </choice>
+        </element>
+        <element comments="Enter Cost % Allocation 1" default="0" label="Cost % Allocation 1" mandatory="true" max_length="40" name="cost_allocation_1" type="integer"/>
+        <element comments="Enter Cost % Allocation 1" default="0" label="Cost % Allocation 2" max_length="40" name="cost_allocation_2" type="integer"/>
+        <element label="Form Completed" max_length="40" name="form_completed" type="boolean"/>
+        <element label="Hard Drive Removed" max_length="40" name="hard_drive_removed" type="boolean"/>
+        <element comments="Enter Hostname" label="Hostname" max_length="40" name="hostname" type="string"/>
+        <element comments="Enter Make" label="Make" max_length="40" name="make" type="string"/>
+        <element comments="Enter Model" label="Model" max_length="40" name="model" type="string"/>
+        <element comments="Enter New H.D. serial" label="New Hard Drive serial number" max_length="40" name="new_hard_drive_serial_number" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
+        <element comments="Enter Old H.D serial" label="Old Hard Drive serial number" max_length="40" name="old_hard_drive_serial_number" type="string"/>
+        <element comments="Enter Original Assignee Group" label="Original Assignee Group" max_length="40" name="original_assignee_group" type="string"/>
+        <element comments="Enter Primary Cost Center" label="Primary Cost Center" mandatory="true" max_length="40" name="primary_cost_center" type="string"/>
+        <element choice="1" label="Priority" mandatory="true" max_length="40" name="priority" type="string">
+            <choice>
+                <element inactive_on_update="false" label="P1S1" sequence="0" value="p1s1"/>
+                <element inactive_on_update="false" label="P1S2" sequence="1" value="p1s2"/>
+                <element inactive_on_update="false" label="P1S3" sequence="2" value="p1s3"/>
+                <element inactive_on_update="false" label="P2" sequence="3" value="p2"/>
+                <element inactive_on_update="false" label="P3" sequence="4" value="p3"/>
+                <element inactive_on_update="false" label="P4" sequence="5" value="p4"/>
+                <element inactive_on_update="false" label="Standard" sequence="6" value="standard"/>
+            </choice>
+        </element>
+        <element comments="Enter Rack/Grid Location" display="true" label="Rack/Grid Location" max_length="40" name="rack_grid_location" type="string"/>
+        <element choice="1" label="Requested SLO" max_length="40" name="requested_slo" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Scheduled Event" sequence="0" value="scheduled event"/>
+                <element inactive_on_update="false" label="4 Hours" sequence="1" value="4 hours"/>
+            </choice>
+        </element>
+        <element comments="Enter RMA" label="RMA" max_length="40" name="rma" type="string"/>
+        <element comments="Enter Sec. Cost Center" label="Secondary Cost Center" max_length="40" name="secondary_cost_center" type="string"/>
+        <element comments="Enter Serial Number" label="Serial Number" max_length="40" name="serial_number" type="string"/>
+        <element comments="Enter Shipping Company" label="Shipping Company" max_length="40" name="shipping_company" type="string"/>
+        <element label="Site Contact" max_length="40" name="site_contact" reference="x_291066_it_sreq" reference_qual="task_type_nameISNOTEMPTY^EQ" reference_qual_condition="task_type_nameISNOTEMPTY^EQ" type="reference"/>
+        <element choice="1" label="SLA" mandatory="true" max_length="40" name="sla" type="string">
+            <choice>
+                <element inactive_on_update="false" label="4 Hours" sequence="0" value="4 hours"/>
+                <element inactive_on_update="false" label="Same Day" sequence="1" value="same day"/>
+                <element inactive_on_update="false" label="Next Day" sequence="2" value="next day"/>
+                <element inactive_on_update="false" label="N/A" sequence="3" value="n/a"/>
+            </choice>
+        </element>
+        <element choice="1" label="Support Type" max_length="40" name="support_type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="BAU" sequence="0" value="bau"/>
+                <element inactive_on_update="false" label="Projects" sequence="1" value="projects"/>
+                <element inactive_on_update="false" label="Initiatives" sequence="2" value="initiatives"/>
+            </choice>
+        </element>
+        <element comments="Enter Tracking Number" label="Tracking Number" max_length="40" name="tracking_number" type="string"/>
+        <element choice="1" label="Was device shipped?" max_length="40" name="was_device_shipped" type="string">
+            <choice>
+                <element inactive_on_update="false" label="yes" sequence="0" value="yes"/>
+                <element inactive_on_update="false" label="no" sequence="1" value="no"/>
+            </choice>
+        </element>
+    </element>
+</database>

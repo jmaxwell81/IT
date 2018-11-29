@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Sites" max_length="40" name="x_291066_it_sites" type="collection">
+        <element label="City" max_length="40" name="city" type="string"/>
+        <element label="Country" max_length="40" name="country" type="string"/>
+        <element label="Id" max_length="40" name="id" type="string"/>
+        <element label="IT_Asset" max_length="40" name="it_asset" type="string"/>
+        <element label="IT_Asset_Owner_Id" max_length="40" name="it_asset_owner_id" type="string"/>
+        <element label="IT_Asset_Owner_Name" max_length="40" name="it_asset_owner_name" type="string"/>
+        <element label="Name" max_length="80" name="name" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="External_id" max_length="40" name="number" read_only="true" type="string"/>
+        <element label="Short_Description" max_length="100" name="short_description" type="string"/>
+        <element label="Site_Location_Latitude" max_length="20" name="site_location_latitude" type="decimal"/>
+        <element label="Site_Location_Longitude" max_length="20" name="site_location_longitude" type="decimal"/>
+        <element label="State_Province" max_length="40" name="state_province" type="string"/>
+        <element label="Street" max_length="40" name="street" type="string"/>
+        <element label="Street_line_2" max_length="60" name="street_line_2" type="string"/>
+        <element label="Zip_Postal_Code" max_length="40" name="zip_postal_code" type="integer"/>
+    </element>
+</database>

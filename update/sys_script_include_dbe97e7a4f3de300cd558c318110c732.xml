@@ -17,18 +17,18 @@ ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProces
 			gs.info(response.getStatusCode());
 			
 			if(response.getStatusCode() === 200) {
-				var responseBody = JSON.parse(response.getBody());		
-				var gr;		
-
+				var responseBody = JSON.parse(response.getBody());						
+				var gr;
+				
 				for (var index = 0; index < responseBody.length ; index++) {
 					gr = new GlideRecord("x_291066_it_ithistoric");
 					gr.initialize();				
-					
+
 					// Saving in ITService table.
 					gr.u_id = responseBody[index].Id;
 					gr.u_account = responseBody[index].Account;
-					gr.u_account_name = responseBody[index]["Account.Name"];
-					
+					gr.u_account_name = responseBodydex[index]["Account.Name"];
+
 					gr.u_site = responseBody[index].Site;
 					gr.u_site_name = responseBody[index]["Site.Name"];
 					gr.u_site_country = responseBody[index]["Site.Country"];
@@ -37,26 +37,25 @@ ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProces
 					gr.u_site_street = responseBody[index]["Site.Street"];
 					gr.u_site_timezone = responseBody[index]["Site.Timezone"];
 					gr.u_site_zippostalcode = responseBody[index]["Site.Zip_Postal_Code"];
-					
+
 					gr.u_task_type = responseBody[index]["Task_Type_Record"];
 					gr.u_task_type_name = responseBody[index]["Task_Type_Record.Name"];
 					gr.u_task_type_record_category = responseBody[index]["Task_Type_Record.Category"];					
-					
+
 					gr.u_summary = responseBody[index].Summary;
 					gr.u_status = responseBody[index].Status;
 					gr.u_sreq_id = responseBody[index].Name;
-					
+
 					gr.u_requested_by = responseBody[index]["Requested_By"];
 					gr.u_requested_by_email = responseBody[index]["Requested_By.Email"];
 					gr.u_requested_by_name = responseBody[index]["Requested_By.Name"];
-					
+
 					gr.start = responseBody[index]["Requested_Start"];
 					gr.requested_end = responseBody[index]["Requested_End"];
 					gr.submitted_on = new GlideDateTime();
-					gr.insert();																				
+					gr.insert();
 				}		
-			}
-			
+			}			
 		}
 		catch(ex) {			
 			gs.error(ex.message);
@@ -65,18 +64,42 @@ ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProces
 	
 	createServiceRequest: function() {
 		try {
-			var r = new sn_ws.RESTMessageV2('x_291066_it.CreateServiceRequest', 'Default POST');
+			//var r = new sn_ws.RESTMessageV2('x_291066_it.CreateServiceRequest', 'Default POST');
+			var r = new sn_ws.RESTMessageV2('x_291066_it.New_CreateServiceRequest', 'Default POST');
 			var sreq = this.getParameter("sreq");
-			var sreqObject = JSON.parse(sreq);
+			var sreqObject = JSON.parse(sreq);			
 			
+			// If task type doesn't exist on SiteHands it's just saved on ServiceNow
 			if (!this.isCreatedOnServiceNow(sreqObject.task)) {
-				//gs.info("createServiceRequest --> " + sreq);
+				
 				var body = this.getValidInputFields(sreqObject);
-				//gs.info(JSON.stringify(body));
+				
 				if (Object.keys(body).length === 0 && body.constructor === Object){
 					throw "Some mandatory field is empty or null, Please check it";
+				}				
+				
+				// Check if site exist on SiteHands if it doesn't exist it is added.
+				var sitesManager = new SitesManager();
+				var site = sitesManager.getSiteById(body.Site);					
+				if (!site) {
+					gs.info("The ServiceNow's site is being added to SiteHands");
+					var serviceNowSite = new GlideRecord("x_291066_it_sites");
+					serviceNowSite.addQuery("id", body.Site.toString());
+					serviceNowSite.query();	
+					while(serviceNowSite.next()) {
+						var newSite = {						
+							"Name": serviceNowSite.name.toString(),
+							"Street": serviceNowSite.street.toString(),
+							"City": serviceNowSite.city.toString(),
+							"External_ID": serviceNowSite.number.toString(),
+							"Country": serviceNowSite.country.toString(),
+							"State_Province": serviceNowSite.state_province.toString(),
+							"Zip_Postal_Code": serviceNowSite.zip_postal_code.toString(),							
+							"Short_Description": serviceNowSite.short_description.toString()						
+						};					
+						body.Site = sitesManager.addSite(newSite).Id.toString();					
+					}					
 				}
-
 				r.setRequestHeader("Content-Type", "application/json");
 				r.setRequestBody(JSON.stringify(body));
 
@@ -84,24 +107,26 @@ ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProces
 				var httpStatus = response.getStatusCode();
 				var bodyContent = response.getBody();
 
-				gs.info("STATUS CODE: " + httpStatus);		
-				gs.info("BODY: " + bodyContent);
+ 				gs.info("STATUS CODE: " + httpStatus);		
+ 				gs.info("BODY: " + bodyContent);				
+				
+				if(httpStatus === 200) {					
+					// populating the missing fields
+					this.populateTheRestFields(JSON.parse(bodyContent));					
+				}				
 			}
-			
-			
 		}
 		catch(ex) {
-			gs.error(ex);
+			gs.error(ex.message);
 		}
 	},
 	
-	getValidInputFields: function(current) {
-// 		gs.info("FROM getValidInputFields!!!!");
-// 		gs.info("getValidInputFields ---> " + sreq);				
-		var account = current.account.toString();		
-		var task = current.task.toString();		
-		var site = current.site.toString();		
-		var summary = current.summary.toString();		
+	getValidInputFields: function(current) {				
+		var account = current.Account.toString();		
+		var task = current.Task_Type_Record.toString();		
+		var site = current.Site.toString();		
+		var summary = current.Summary.toString();
+		gs.info(account + "\n" + task + "\n" + site + "\n" + summary);
 
 		if(account && task && site && summary) {
 			return current;		
@@ -117,19 +142,60 @@ ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProces
 		return taskTypeRecords.next();
 	},
 	
+	populateTheRestFields: function(responseBody) {
+
+		try { 
+			var serviceRequest = new GetServiceRequestById();
+			//var sreq = serviceRequest.getSREQById(responseBody.Name.toString());
+			var sreq = serviceRequest.getServiceRequest(responseBody.Name.toString());
+
+			var external_id = sreq.External_ID.toString();
+			var sreq_id = sreq.Name.toString();
+			var accountName = sreq["Account.Name"].toString();
+			var siteName = sreq["Site.Name"].toString();
+			var taskTypeName = sreq["Task_Type_Record.Name"].toString();
+			var status = sreq.Status.toString();
+
+			gs.info("external_id --> " + external_id);
+			gs.info("sreq_id --> " + sreq_id);
+			gs.info("accountName --> " + accountName);
+			gs.info("siteName --> " + siteName);
+			gs.info("taskTypeName --> " + taskTypeName);
+			gs.info("status --> " + status);
+
+			var r = new sn_ws.RESTMessageV2('x_291066_it.GetServiceRequestByExternalID', 'Default GET');
+			 r.setStringParameterNoEscape('external_id', '');
+
+			var current = new GlideRecord('x_291066_it_sreq');
+			current.get("external_id", external_id);
+			current.sreq_id = sreq_id;
+			current.account_name = accountName;
+			current.site_name = siteName;
+			current.task_type_name = taskTypeName;
+			current.status = status;
+			current.submitted_on = new GlideDateTime();
+			current.update('Updating the SREQ RECORD');
+		}
+		catch(ex) {
+			 gs.error(ex.message);
+		}
+	},
+	
     type: 'ServiceRequestManager'
-});]]></script>
+});
+
+]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-11-19 21:02:14</sys_created_on>
         <sys_id>dbe97e7a4f3de300cd558c318110c732</sys_id>
-        <sys_mod_count>60</sys_mod_count>
+        <sys_mod_count>188</sys_mod_count>
         <sys_name>ServiceRequestManager</sys_name>
         <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
         <sys_update_name>sys_script_include_dbe97e7a4f3de300cd558c318110c732</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-11-23 23:25:57</sys_updated_on>
+        <sys_updated_on>2018-11-27 21:47:21</sys_updated_on>
     </sys_script_include>
 </record_update>

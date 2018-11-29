@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <condition/>
+        <conditional>false</conditional>
+        <name>Test custom form table</name>
+        <run_as display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2018-11-28 18:07:46</run_start>
+        <run_time>1970-01-01 08:00:00</run_time>
+        <run_type>daily</run_type>
+        <script><![CDATA[// var records = new GlideRecord("x_291066_it_breakfix_customform");
+// records.query();
+
+// if (!records.next()) {
+// 	gs.info("No records found on BreakFix table");
+// } else {
+// 	while(records.next()) {
+// 		gs.info("CATEGORY: " + records.category.toString());
+// 		gs.info("Primary Cost Center: " + records.primary_cost_center.toString());
+// 	}	
+// }
+
+var records = new GlideRecord("x_291066_it_sites");
+records.query();
+
+if (!records.next()) {
+	gs.info("No records found on Site table");
+} else {
+	while(records.next()) {
+		gs.info("ID: " + records.id.toString());		
+	}	
+}
+
+]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-11-28 18:11:59</sys_created_on>
+        <sys_id>c87820fd4f0e2300cd558c318110c7db</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Test custom form table</sys_name>
+        <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
+        <sys_update_name>sysauto_script_c87820fd4f0e2300cd558c318110c7db</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-11-28 18:13:32</sys_updated_on>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

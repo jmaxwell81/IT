@@ -14,6 +14,20 @@
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2018-11-21 20:22:20</sys_updated_on>
         </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-11-28 17:48:27</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c104203d4f0e2300cd558c318110c74e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_291066_it_sreq" name="x_291066_it_sreq" sys_domain="global" view="Default view">8314cda34f356700cd558c318110c71f</sys_ui_form>
+            <sys_ui_section caption="Break Fix" display_value="Break Fix" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-11-28 17:48:27</sys_updated_on>
+        </sys_ui_form_section>
         <sys_ui_form action="INSERT_OR_UPDATE">
             <name>x_291066_it_sreq</name>
             <roles/>

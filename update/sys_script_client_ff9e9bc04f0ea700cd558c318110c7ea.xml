@@ -14,13 +14,16 @@
    //Type appropriate comment here, and begin script below		
 	
 	var newServiceRequest = {
-		"account": g_form.getValue("account"),
-		"site": g_form.getValue("site"),
-		"task": g_form.getValue("task_type"),
-		"summary": g_form.getValue("summary"),
-		"description": g_form.getValue("description"),
-		"start": g_form.getValue("start"),
-		"requested_end": g_form.getValue("requested_end")
+		"Account": g_form.getValue("account"),
+		"Site": g_form.getValue("site"),
+		"Task_Type_Record": g_form.getValue("task_type"),
+		"Summary": g_form.getValue("summary"),
+		"Description": g_form.getValue("description"),
+		"Requested_Start": g_form.getValue("start"),
+		"Requested_End": g_form.getValue("requested_end"),
+		"External_ID": g_form.getValue("external_id"),
+		"State": "New",
+		"Status": "Draft"
 	};
 	console.log(JSON.stringify(newServiceRequest));
 	
@@ -45,7 +48,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ff9e9bc04f0ea700cd558c318110c7ea</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>CreateServiceRequest</sys_name>
         <sys_overrides/>
         <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
@@ -53,7 +56,7 @@
         <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
         <sys_update_name>sys_script_client_ff9e9bc04f0ea700cd558c318110c7ea</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-11-23 22:03:52</sys_updated_on>
+        <sys_updated_on>2018-11-27 21:04:56</sys_updated_on>
         <table>x_291066_it_sreq</table>
         <type>onSubmit</type>
         <ui_type>0</ui_type>
