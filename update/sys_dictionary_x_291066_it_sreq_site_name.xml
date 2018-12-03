@@ -53,15 +53,15 @@
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-11-19 21:00:17</sys_created_on>
-        <sys_id>9269367a4f3de300cd558c318110c767</sys_id>
+        <sys_id>3cfa5ad34f86e300cd558c318110c7d3</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Site Name</sys_name>
         <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
         <sys_policy/>
         <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
         <sys_update_name>sys_dictionary_x_291066_it_sreq_site_name</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-11-19 21:00:17</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2018-12-03 18:19:29</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

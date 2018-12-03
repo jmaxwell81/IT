@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>false</active>
+        <add_message>true</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_291066_it_breakfix_customform</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message><![CDATA[<p>A new Break Fix record was added!!</p>]]></message>
+        <name>Display the reference field value </name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	// Add your code here
+	gs.info("CURRENT.SERVICE_REQUEST_NAME: " + current.service_request_name.toString());
+	gs.info("CURRENT.NUMBER: " + current.number);
+	
+	
+// 	var gr = new GlideRecord('child table name');
+// 	 gr.addQuery('parent',current.sys_id); //querying parent and child sys_id's
+// 	 gr.query();
+	
+	 var gr = new GlideRecord('x_291066_it_sreq');
+	 //gr.addQuery('parent', current.service_request_name.toString()); //querying parent and child sys_id's
+	 //gr.query();
+	gr.get('sys_id', current.service_request_name.toString());
+	gs.info("TASK TYPE: " + gr.task_type.toString());
+	gs.info("SUMMARY: " + gr.summary.toString());
+		
+	
+// 	while(gr.next()) {
+// 		gs.info(gr.getValue("task_type"));
+// 	}
+ 
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-11-30 16:38:57</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>c9e6ae5e4f826300cd558c318110c787</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Display the reference field value </sys_name>
+        <sys_overrides/>
+        <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
+        <sys_update_name>sys_script_c9e6ae5e4f826300cd558c318110c787</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-11-30 18:17:12</sys_updated_on>
+        <template/>
+        <when>async</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=c9e6ae5e4f826300cd558c318110c787"/>
+</record_update>

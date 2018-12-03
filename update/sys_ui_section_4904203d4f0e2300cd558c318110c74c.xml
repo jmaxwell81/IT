@@ -1,32 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_section caption="Break Fix" section_id="4904203d4f0e2300cd558c318110c74c" sys_domain="global" table="x_291066_it_sreq" version="3" view="">
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>12M.x_291066_it_sreq.x_291066_it_breakfix_customform.site_contact</element>
+            <element>12M.x_291066_it_sreq.x_291066_it_breakfix_customform.service_request_name</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-11-28 17:48:27</sys_created_on>
-            <sys_id>1904603d4f0e2300cd558c318110c7ad</sys_id>
+            <sys_created_on>2018-11-30 01:54:22</sys_created_on>
+            <sys_id>a8dc534e4fca2300cd558c318110c742</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Break Fix" display_value="Break Fix" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-11-28 17:48:27</sys_updated_on>
+            <sys_updated_on>2018-11-30 01:54:22</sys_updated_on>
             <sys_user/>
             <type>list</type>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>.split</element>
-            <position>1</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-11-28 17:48:27</sys_created_on>
-            <sys_id>9904603d4f0e2300cd558c318110c7ad</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="Break Fix" display_value="Break Fix" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-11-28 17:48:27</sys_updated_on>
-            <sys_user/>
-            <type>.split</type>
         </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption>Break Fix</caption>

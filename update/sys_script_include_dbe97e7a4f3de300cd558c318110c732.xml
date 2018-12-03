@@ -9,7 +9,7 @@
         <script><![CDATA[var ServiceRequestManager = Class.create();
 ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
-	populateServiceRequests : function() {		
+	populateServiceRequests : function() {
 		try {
 			var r = new sn_ws.RESTMessageV2('x_291066_it.GetAllServiceRequests', 'Default GET');
 			var response = r.execute();			
@@ -76,7 +76,7 @@ ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProces
 				
 				if (Object.keys(body).length === 0 && body.constructor === Object){
 					throw "Some mandatory field is empty or null, Please check it";
-				}				
+				}
 				
 				// Check if site exist on SiteHands if it doesn't exist it is added.
 				var sitesManager = new SitesManager();
@@ -107,13 +107,15 @@ ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProces
 				var httpStatus = response.getStatusCode();
 				var bodyContent = response.getBody();
 
- 				gs.info("STATUS CODE: " + httpStatus);		
+ 				gs.info("STATUS CODE FROM CREATE A SREQ: " + httpStatus);		
  				gs.info("BODY: " + bodyContent);				
 				
 				if(httpStatus === 200) {					
 					// populating the missing fields
 					this.populateTheRestFields(JSON.parse(bodyContent));					
-				}				
+				}
+				gs.info("OHOHOHOHOHOHOHOHHOH");
+				return JSON.stringify(bodyContent);
 			}
 		}
 		catch(ex) {
@@ -156,16 +158,13 @@ ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProces
 			var taskTypeName = sreq["Task_Type_Record.Name"].toString();
 			var status = sreq.Status.toString();
 
-			gs.info("external_id --> " + external_id);
-			gs.info("sreq_id --> " + sreq_id);
-			gs.info("accountName --> " + accountName);
-			gs.info("siteName --> " + siteName);
-			gs.info("taskTypeName --> " + taskTypeName);
-			gs.info("status --> " + status);
+			gs.info("external_id --> " + external_id + "\n" + "sreq_id --> " + sreq_id + "\n" + "accountName --> " + accountName + "\n" + "siteName --> " + siteName + "\n" + "taskTypeName --> " + taskTypeName + "\n" + "status --> " + status);
 
-			var r = new sn_ws.RESTMessageV2('x_291066_it.GetServiceRequestByExternalID', 'Default GET');
-			 r.setStringParameterNoEscape('external_id', '');
+// 			var r = new sn_ws.RESTMessageV2('x_291066_it.GetServiceRequestByExternalID', 'Default GET');
+// 			 r.setStringParameterNoEscape('external_id', external_id);
 
+			gs.info("Populating the missing fields of SREQ: " + sreq_id);
+			
 			var current = new GlideRecord('x_291066_it_sreq');
 			current.get("external_id", external_id);
 			current.sreq_id = sreq_id;
@@ -175,9 +174,50 @@ ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProces
 			current.status = status;
 			current.submitted_on = new GlideDateTime();
 			current.update('Updating the SREQ RECORD');
+			
+			gs.info("Finishing the call to populateTheRestFields method!!");
 		}
 		catch(ex) {
 			 gs.error(ex.message);
+		}
+	},
+	
+	updateServiceRequest: function() {
+		try { 
+			gs.info("INSIDE OF updateServiceRequest FUNCTION!!!!!!");
+ 			var parent_sys_id = this.getParameter("parent_sys_id");
+ 			var sreq_id = this.getParameter("sreq_id");
+			
+			gs.info("updateServiceRequest parent_sys_id ----> " + parent_sys_id);
+			gs.info("updateServiceRequest sreq_id ----> " + sreq_id);
+			
+			// Getting the Custom Form values as JSON.
+			var customFormManager = new CustomFormManager();
+			gs.info("JSON_VALUES: " + customFormManager.getBreakFixValues(parent_sys_id));
+			var sreqToUpdate = customFormManager.getBreakFixValues(parent_sys_id);
+			
+			
+			var r = new sn_ws.RESTMessageV2('x_291066_it.UpdateServiceRequest', 'Default PUT');
+			r.setStringParameterNoEscape('sreq_id', sreq_id);
+			
+			r.setRequestHeader("Content-Type", "application/json");
+			r.setRequestBody(sreqToUpdate);
+			
+			var response = r.execute();
+			var responseBody = response.getBody();
+			var httpStatus = response.getStatusCode();		
+			gs.info("STATUS CODE FROM UPDARE SREQ: " + httpStatus);
+			
+			if (httpStatus === 200) {
+				gs.addInfoMessage("The Service Request was updated successfully!!");
+				gs.info(JSON.stringify(responseBody));
+			} else {
+				gs.addErrorMessage("An error ocurred when a the Service Request was being updated. \nSREQ: " + sreq_id + "\nError Code: " + httpStatus);
+				gs.info("An error ocurred when a the Service Request was being updated. \nSREQ: " + sreq_id + "\nError Code: " + httpStatus);
+			}
+		}
+		catch(ex) {
+			gs.error(ex.message);
 		}
 	},
 	
@@ -189,13 +229,13 @@ ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProces
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-11-19 21:02:14</sys_created_on>
         <sys_id>dbe97e7a4f3de300cd558c318110c732</sys_id>
-        <sys_mod_count>188</sys_mod_count>
+        <sys_mod_count>218</sys_mod_count>
         <sys_name>ServiceRequestManager</sys_name>
         <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
         <sys_update_name>sys_script_include_dbe97e7a4f3de300cd558c318110c732</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-11-27 21:47:21</sys_updated_on>
+        <sys_updated_on>2018-12-03 17:51:19</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_section caption="Ticket Details" section_id="12fb41614f462300cd558c318110c750" sys_domain="global" table="x_291066_it_breakfix_customform" version="3" view="">
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>support_type</element>
+            <element>service_desk_ticket_number</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-11-28 02:13:45</sys_created_on>
-            <sys_id>891e0da14f462300cd558c318110c7ab</sys_id>
+            <sys_created_on>2018-11-29 02:14:53</sys_created_on>
+            <sys_id>27e79ef14f022300cd558c318110c7ec</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Ticket Details" display_value="Ticket Details" name="x_291066_it_breakfix_customform" sys_domain="global" view="Default view">12fb41614f462300cd558c318110c750</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-11-28 02:13:45</sys_updated_on>
+            <sys_updated_on>2018-11-29 02:14:53</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>category</element>
+            <element>support_type</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-11-28 02:13:45</sys_created_on>
-            <sys_id>0d1e0da14f462300cd558c318110c7ab</sys_id>
+            <sys_created_on>2018-11-29 02:14:53</sys_created_on>
+            <sys_id>a7e79ef14f022300cd558c318110c7ec</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Ticket Details" display_value="Ticket Details" name="x_291066_it_breakfix_customform" sys_domain="global" view="Default view">12fb41614f462300cd558c318110c750</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-11-28 02:13:45</sys_updated_on>
+            <sys_updated_on>2018-11-29 02:14:53</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>priority</element>
+            <element>service_desk_application</element>
             <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-11-28 02:13:45</sys_created_on>
-            <sys_id>8d1e0da14f462300cd558c318110c7ab</sys_id>
+            <sys_created_on>2018-11-29 02:14:53</sys_created_on>
+            <sys_id>2be79ef14f022300cd558c318110c7ec</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Ticket Details" display_value="Ticket Details" name="x_291066_it_breakfix_customform" sys_domain="global" view="Default view">12fb41614f462300cd558c318110c750</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-11-28 02:13:45</sys_updated_on>
+            <sys_updated_on>2018-11-29 02:14:53</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -46,13 +46,13 @@
             <element>.split</element>
             <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-11-28 02:13:45</sys_created_on>
-            <sys_id>011e0da14f462300cd558c318110c7ac</sys_id>
+            <sys_created_on>2018-11-29 02:14:53</sys_created_on>
+            <sys_id>abe79ef14f022300cd558c318110c7ec</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Ticket Details" display_value="Ticket Details" name="x_291066_it_breakfix_customform" sys_domain="global" view="Default view">12fb41614f462300cd558c318110c750</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-11-28 02:13:45</sys_updated_on>
+            <sys_updated_on>2018-11-29 02:14:53</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
@@ -60,13 +60,41 @@
             <element>sla</element>
             <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-11-28 02:13:45</sys_created_on>
-            <sys_id>811e0da14f462300cd558c318110c7ac</sys_id>
+            <sys_created_on>2018-11-29 02:14:53</sys_created_on>
+            <sys_id>2fe79ef14f022300cd558c318110c7ec</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Ticket Details" display_value="Ticket Details" name="x_291066_it_breakfix_customform" sys_domain="global" view="Default view">12fb41614f462300cd558c318110c750</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-11-28 02:13:45</sys_updated_on>
+            <sys_updated_on>2018-11-29 02:14:53</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>category</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-11-29 02:14:53</sys_created_on>
+            <sys_id>afe79ef14f022300cd558c318110c7ec</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Ticket Details" display_value="Ticket Details" name="x_291066_it_breakfix_customform" sys_domain="global" view="Default view">12fb41614f462300cd558c318110c750</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-11-29 02:14:53</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>priority</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-11-29 02:14:53</sys_created_on>
+            <sys_id>23e79ef14f022300cd558c318110c7ed</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Ticket Details" display_value="Ticket Details" name="x_291066_it_breakfix_customform" sys_domain="global" view="Default view">12fb41614f462300cd558c318110c750</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-11-29 02:14:53</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

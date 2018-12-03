@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_291066_it.CustomFormManager</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>CustomFormManager</name>
+        <script><![CDATA[var CustomFormManager = Class.create();
+CustomFormManager.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	getBreakFixValues: function(parent_sys_id) {		
+		try {
+			gs.info("FROM CustomFormManager getBreakFixValues!!!!!!!!!!! \n parent_sys_id:" + parent_sys_id);			
+
+			var breakFixRecord = new GlideRecord("x_291066_it_breakfix_customform");			
+			breakFixRecord.get("service_request_name", parent_sys_id.toString());
+			var breakFixValues = {};				
+
+			if (breakFixRecord) {
+				gs.info("REFERENCE FIELD : " + breakFixRecord.service_request_name.toString());				
+				breakFixValues = {
+					//Ticket Details
+					"&SupportType": breakFixRecord.support_type? breakFixRecord.support_type.toString() : null,
+					"&Category": breakFixRecord.category? breakFixRecord.category.toString() : null,
+					//"&Client_Ticketing_System": breakFixRecord.client_ticketing_System
+					//"&Client_Ticket_Number": breakFixRecord.client_ticket_number,
+					"&Priority": breakFixRecord.priority? breakFixRecord.priority.toString() : null,
+					"&SLA": breakFixRecord.sla? breakFixRecord.sla.toString() : null,
+
+					//Additional Site Information
+					"&RequestedSLO": breakFixRecord.requested_slo? breakFixRecord.requested_slo.toString() : null,
+					"&SiteContact": breakFixRecord.site_contact? breakFixRecord.site_contact.toString() : null,
+
+					//Cost Allocations
+					"&PrimaryCostCenter": breakFixRecord.primary_cost_center? breakFixRecord.primary_cost_center.toString() : null,
+					"&Cost%Allocation1": breakFixRecord.cost_allocation_1? breakFixRecord.cost_allocation_1.toString() : null,
+					"&SecondaryCostCenter": breakFixRecord.secondary_cost_center? breakFixRecord.secondary_cost_center.toString() : null,
+					"&Cost%Allocation2": breakFixRecord.cost_allocation_2? breakFixRecord.cost_allocation_2.toString() : null,
+
+					//"Access Details"
+					"Client_Access_Ticket_Number": breakFixRecord.client_access_ticket_number? breakFixRecord.client_access_ticket_number.toString() : null,
+					"Client_Access_Window_Start": breakFixRecord.client_access_window_start? breakFixRecord.client_access_window_start.toString() : null,
+					"Client_Access_Window_End": breakFixRecord.client_access_window_end? breakFixRecord.client_access_window_end.toString() : null,
+					"&SASNumber":  breakFixRecord.sas_number? breakFixRecord.sas_number.toString() : null,
+
+					//Break/Fix Details
+					"&HardDriveRemoved": breakFixRecord.hard_drive_removed? breakFixRecord.hard_drive_removed.toString() : null,
+					"&OldHardDriveserialnumber": breakFixRecord.old_hard_drive_serial_number? breakFixRecord.old_hard_drive_serial_number.toString() : null,
+					"&NewHardDriveserialnumber": breakFixRecord.new_hard_drive_serial_number? breakFixRecord.new_hard_drive_serial_number.toString() : null,
+					"&FormCompleted": breakFixRecord.form_completed? breakFixRecord.form_completed.toString() : null,
+					"&Hostname": breakFixRecord.hostname? breakFixRecord.hostname.toString() : null,
+					"&Rack/GridLocation": breakFixRecord.rack_grid_location? breakFixRecord.rack_grid_location.toString() : null,
+					"&SerialNumber": breakFixRecord.serial_number? breakFixRecord.serial_number.toString() : null,
+					"&Make": breakFixRecord.make? breakFixRecord.make.toString() : null,
+					"&Model": breakFixRecord.model? breakFixRecord.model.toString() : null,
+					"&AssetTag": breakFixRecord.asset_tag? breakFixRecord.asset_tag.toString() : null,
+					"&OriginalAssigneeGroup": breakFixRecord.original_assignee_group? breakFixRecord.original_assignee_group.toString() : null,
+					"&AssigneeGroup": breakFixRecord.assignee_group? breakFixRecord.assignee_group.toString() : null,
+					"&Wasdeviceshipped?": breakFixRecord.was_device_shipped? breakFixRecord.was_device_shipped.toString() : null,
+					"&ShippingCompany": breakFixRecord.shipping_Company? breakFixRecord.shipping_Company.toString() : null,
+					"&TrackingNumber": breakFixRecord.tracking_number? breakFixRecord.tracking_number.toString() : null,
+					"&RMA": breakFixRecord.rma? breakFixRecord.rma.toString() : null
+				};				
+			}
+			return JSON.stringify(breakFixValues);
+		} catch(ex) {
+			gs.error("An error acurred while a breadk fix record was getting " + ex);
+		}		
+	},
+
+    type: 'CustomFormManager'
+});
+	]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-11-29 17:42:25</sys_created_on>
+        <sys_id>7c7ae90a4fc62300cd558c318110c74c</sys_id>
+        <sys_mod_count>37</sys_mod_count>
+        <sys_name>CustomFormManager</sys_name>
+        <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
+        <sys_update_name>sys_script_include_7c7ae90a4fc62300cd558c318110c74c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-12-03 18:05:29</sys_updated_on>
+    </sys_script_include>
+</record_update>

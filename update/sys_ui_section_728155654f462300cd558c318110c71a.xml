@@ -1,18 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_section caption="Access Details" section_id="728155654f462300cd558c318110c71a" sys_domain="global" table="x_291066_it_breakfix_customform" version="3" view="">
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>.split</element>
+            <element>client_access_ticket_number</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-11-28 02:28:53</sys_created_on>
-            <sys_id>438195654f462300cd558c318110c77a</sys_id>
+            <sys_created_on>2018-11-29 02:09:48</sys_created_on>
+            <sys_id>89c652f14f022300cd558c318110c7f4</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Access Details" display_value="Access Details" name="x_291066_it_breakfix_customform" sys_domain="global" view="Default view">728155654f462300cd558c318110c71a</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-11-28 02:28:53</sys_updated_on>
+            <sys_updated_on>2018-11-29 02:09:48</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sas_number</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-11-29 02:09:48</sys_created_on>
+            <sys_id>0dc652f14f022300cd558c318110c7f4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Access Details" display_value="Access Details" name="x_291066_it_breakfix_customform" sys_domain="global" view="Default view">728155654f462300cd558c318110c71a</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-11-29 02:09:48</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-11-29 02:09:48</sys_created_on>
+            <sys_id>8dc652f14f022300cd558c318110c7f4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Access Details" display_value="Access Details" name="x_291066_it_breakfix_customform" sys_domain="global" view="Default view">728155654f462300cd558c318110c71a</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-11-29 02:09:48</sys_updated_on>
             <sys_user/>
             <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>client_access_window_start</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-11-29 02:09:48</sys_created_on>
+            <sys_id>01c652f14f022300cd558c318110c7f5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Access Details" display_value="Access Details" name="x_291066_it_breakfix_customform" sys_domain="global" view="Default view">728155654f462300cd558c318110c71a</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-11-29 02:09:48</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>client_access_window_end</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-11-29 02:09:48</sys_created_on>
+            <sys_id>81c652f14f022300cd558c318110c7f5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Access Details" display_value="Access Details" name="x_291066_it_breakfix_customform" sys_domain="global" view="Default view">728155654f462300cd558c318110c71a</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-11-29 02:09:48</sys_updated_on>
+            <sys_user/>
+            <type/>
         </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption>Access Details</caption>

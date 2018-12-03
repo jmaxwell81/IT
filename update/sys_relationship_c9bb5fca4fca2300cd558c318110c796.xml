@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_relationship">
+    <sys_relationship action="INSERT_OR_UPDATE">
+        <advanced>false</advanced>
+        <apply_to/>
+        <basic_apply_to>x_291066_it_sreq</basic_apply_to>
+        <basic_query_from>x_291066_it_breakfix_customform</basic_query_from>
+        <insert_callback/>
+        <name>SREQ to BreakFix</name>
+        <query_from/>
+        <query_with><![CDATA[gs.info("parent: " + parent.external_id);
+gs.info("current: " + current.service_request_name);
+current.addQuery('service_request_name', parent.external_id);]]></query_with>
+        <reference_field>service_request_name</reference_field>
+        <related_list/>
+        <simple_reference>false</simple_reference>
+        <sys_class_name>sys_relationship</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-11-30 01:51:04</sys_created_on>
+        <sys_id>c9bb5fca4fca2300cd558c318110c796</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>SREQ to BreakFix</sys_name>
+        <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
+        <sys_update_name>sys_relationship_c9bb5fca4fca2300cd558c318110c796</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-11-30 17:11:31</sys_updated_on>
+    </sys_relationship>
+    <sys_translated_text action="delete_multiple" query="documentkey=c9bb5fca4fca2300cd558c318110c796"/>
+</record_update>

@@ -3,9 +3,9 @@
         <abort_action>false</abort_action>
         <access>package_private</access>
         <action_delete>false</action_delete>
-        <action_insert>true</action_insert>
+        <action_insert>false</action_insert>
         <action_query>false</action_query>
-        <action_update>false</action_update>
+        <action_update>true</action_update>
         <active>false</active>
         <add_message>true</add_message>
         <advanced>true</advanced>
@@ -33,6 +33,37 @@
 	gs.info("BUSINESS RULE site = " + current.site);		
 	gs.info("BUSINESS RULE sreq_id = " + current.sreq_id);
 	gs.info("BUSINESS RULE EXTERNAL ID = " + current.external_id);
+	gs.info("BUSINESS RULE SYS ID = " + current.sys_id);
+	
+	var customFormManager = new CustomFormManager();
+	customFormManager.getBreakFixValues(current.sys_id);
+	customFormManager.getXML(getBreakFixValues);
+	
+	var breakFixValues = {};
+	
+	function getBreakFixValues(response) {
+		if (response.status === 200) {
+			breakFixValues = response.responseXML.documentElement.getAttribute("answer").evalJSON();
+			gs.info("SUCCESSFULLY");
+		} else {
+			gs.info("ERROR!!");
+		}
+	}
+	
+	gs.info("BUSINESS RULE JSON = " + JSON.stringify(breakFixValues));
+	
+	var serviceRequestManager = new ServiceRequestManager();
+	serviceRequestManager.updateServiceRequest(JSON.stringify(breakFixValues), current.sreq_id);
+	serviceRequestManager.getXML(updateSREQ);
+	
+	function updateSREQ(response) {
+		if (response.status === 200) {
+			gs.info("UPDATED SUCCESSFULLY");
+		} else {
+			gs.info("ERROR WHEN A SREQ WAS UPDATIG!!");
+		}
+	}
+	
 	
 // 	var sreqManager = new ServiceRequestManager();
 // 	var external_id = current.external_id;
@@ -129,7 +160,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>d1fa1bfe4f7de300cd558c318110c782</sys_id>
-        <sys_mod_count>31</sys_mod_count>
+        <sys_mod_count>37</sys_mod_count>
         <sys_name>Update SREQ fields</sys_name>
         <sys_overrides/>
         <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
@@ -137,7 +168,7 @@
         <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
         <sys_update_name>sys_script_d1fa1bfe4f7de300cd558c318110c782</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-11-27 21:40:13</sys_updated_on>
+        <sys_updated_on>2018-11-30 22:27:47</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

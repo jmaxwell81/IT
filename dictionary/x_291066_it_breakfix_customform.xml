@@ -16,10 +16,13 @@
                 <element inactive_on_update="false" label="West Site Visit Project" sequence="9" value="west site visit project"/>
             </choice>
         </element>
-        <element comments="Enter Cost % Allocation 1" default="0" label="Cost % Allocation 1" mandatory="true" max_length="40" name="cost_allocation_1" type="integer"/>
-        <element comments="Enter Cost % Allocation 1" default="0" label="Cost % Allocation 2" max_length="40" name="cost_allocation_2" type="integer"/>
-        <element label="Form Completed" max_length="40" name="form_completed" type="boolean"/>
-        <element label="Hard Drive Removed" max_length="40" name="hard_drive_removed" type="boolean"/>
+        <element label="Client Access Ticket Number" max_length="255" name="client_access_ticket_number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Client Access Window End" max_length="40" name="client_access_window_end" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="Client Access Window Start" max_length="40" name="client_access_window_start" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" comments="Enter Cost % Allocation 1" default="0" label="Cost % Allocation 1" mandatory="true" max_length="40" name="cost_allocation_1" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" comments="Enter Cost % Allocation 1" default="0" label="Cost % Allocation 2" max_length="40" name="cost_allocation_2" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Form Completed" max_length="40" name="form_completed" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" label="Hard Drive Removed" max_length="40" name="hard_drive_removed" type="boolean"/>
         <element comments="Enter Hostname" label="Hostname" max_length="40" name="hostname" type="string"/>
         <element comments="Enter Make" label="Make" max_length="40" name="make" type="string"/>
         <element comments="Enter Model" label="Model" max_length="40" name="model" type="string"/>
@@ -47,10 +50,20 @@
             </choice>
         </element>
         <element comments="Enter RMA" label="RMA" max_length="40" name="rma" type="string"/>
+        <element label="SAS Number" max_length="40" name="sas_number" type="string"/>
         <element comments="Enter Sec. Cost Center" label="Secondary Cost Center" max_length="40" name="secondary_cost_center" type="string"/>
         <element comments="Enter Serial Number" label="Serial Number" max_length="40" name="serial_number" type="string"/>
+        <element choice="1" label="Service Desk Application" mandatory="true" max_length="40" name="service_desk_application" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Service Manager" sequence="0" value="service manager"/>
+                <element inactive_on_update="false" label="WRM" sequence="1" value="wrm"/>
+                <element inactive_on_update="false" label="EURC" sequence="2" value="eurc"/>
+                <element inactive_on_update="false" label="Prime" sequence="3" value="prime"/>
+            </choice>
+        </element>
+        <element label="Service Desk Ticket Number" mandatory="true" max_length="255" name="service_desk_ticket_number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Service Request Name" max_length="40" name="service_request_name" reference="x_291066_it_sreq" type="reference"/>
         <element comments="Enter Shipping Company" label="Shipping Company" max_length="40" name="shipping_company" type="string"/>
-        <element label="Site Contact" max_length="40" name="site_contact" reference="x_291066_it_sreq" reference_qual="task_type_nameISNOTEMPTY^EQ" reference_qual_condition="task_type_nameISNOTEMPTY^EQ" type="reference"/>
         <element choice="1" label="SLA" mandatory="true" max_length="40" name="sla" type="string">
             <choice>
                 <element inactive_on_update="false" label="4 Hours" sequence="0" value="4 hours"/>
@@ -73,5 +86,8 @@
                 <element inactive_on_update="false" label="no" sequence="1" value="no"/>
             </choice>
         </element>
+        <index name="index">
+            <element name="service_request_name"/>
+        </index>
     </element>
 </database>

@@ -11,8 +11,6 @@
         <name>CreateServiceRequest</name>
         <order/>
         <script><![CDATA[function onSubmit() {
-   //Type appropriate comment here, and begin script below		
-	
 	var newServiceRequest = {
 		"Account": g_form.getValue("account"),
 		"Site": g_form.getValue("site"),
@@ -25,30 +23,64 @@
 		"State": "New",
 		"Status": "Draft"
 	};
-	console.log(JSON.stringify(newServiceRequest));
 	
-	// Add the new record to Sitehands
+ 	// Add the new record to Sitehands
 	var sreqManager = new GlideAjax("ServiceRequestManager");
 	sreqManager.addParam("sysparm_name", "createServiceRequest");
 	sreqManager.addParam("sreq", JSON.stringify(newServiceRequest));
-	sreqManager.getXML(populateTaskTypes);
+	sreqManager.getXML(serviceRequestResponse);
 	
-	function populateTaskTypes(response) {
-		if (response.status === 200) {
+	function serviceRequestResponse(response) {
+		if (response.status === 200) {			
+			console.log("FROM CLIENT AFTER A NEW RECORD WAS ADDED!!");
+			g_form.addInfoMessage('A new Service Request was added successfully!!!');
+			var bodyResponse = JSON.parse(response.responseXML.documentElement.getAttribute("answer").evalJSON());			
+			console.log("AFTER POST A NEW RECORD ----> " + bodyResponse);
+			console.log("AFTER POST A NEW RECORD ----> " + bodyResponse.Name.toString());
+			//alert(bodyResponse.Name.toString());
+			
+			// Adding the custom form values
+ 			var parent_sys_id = g_form.getUniqueValue().toString();
+			var sreq_id = bodyResponse.Name.toString();
+			
+			console.log("BEFORE UPDATE: sreq_id ===>" + sreq_id);
+			console.log("BEFORE UPDATE: parent_sys_id ===>" + parent_sys_id);			
+			
+			updateServiceRequest(sreq_id, parent_sys_id);
+
+		} else {
+			console.log('An error ocurred when a new Service Request was being saved!!!' + '\n status code: ' + response.status);
+			g_form.addErrorMessage('An error ocurred when a new Service Request was being saved!!!' + '\n status code: ' + response.status);
+		}
+	}   
+}
+
+function updateServiceRequest(sreq_id, parent_sys_id) {
+	console.log("CLIENT SIDE sreq_id: ----> " + sreq_id);
+	console.log("CLIENT SIDE parent_sys_id: ----> " + parent_sys_id);	
+	
+	var sreqManager = new GlideAjax("ServiceRequestManager");	
+	sreqManager.addParam("sysparm_name", "updateServiceRequest");	
+	sreqManager.addParam("parent_sys_id", parent_sys_id);
+	sreqManager.addParam("sreq_id", sreq_id);
+	sreqManager.getXML(serviceRequestResponse);
+	
+	function serviceRequestResponse() {
+		if (response.status === 200) {			
 			console.log("SUCCESSFULLY!!");
 		} else {
 			console.log("UNSUCCESSFULLY!!!!");
 		}
 	}
-   
-}]]></script>
+}
+]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-11-23 20:57:41</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ff9e9bc04f0ea700cd558c318110c7ea</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>126</sys_mod_count>
         <sys_name>CreateServiceRequest</sys_name>
         <sys_overrides/>
         <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
@@ -56,7 +88,7 @@
         <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
         <sys_update_name>sys_script_client_ff9e9bc04f0ea700cd558c318110c7ea</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-11-27 21:04:56</sys_updated_on>
+        <sys_updated_on>2018-12-03 18:02:45</sys_updated_on>
         <table>x_291066_it_sreq</table>
         <type>onSubmit</type>
         <ui_type>0</ui_type>

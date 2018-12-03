@@ -10,5 +10,8 @@
         <element label="Task Type Name" max_length="40" name="task_type_name" type="string"/>
         <element label="Technician Name" max_length="40" name="technician_name" type="string"/>
         <element label="WO ID" max_length="40" name="wo_id" type="string"/>
+        <index name="index">
+            <element name="service_request_name"/>
+        </index>
     </element>
 </database>
