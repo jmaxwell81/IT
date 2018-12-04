@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element extends="sys_import_set_row" label="ITHistoric" max_length="40" name="x_291066_it_ithistoric" type="collection">
-        <element attributes="import_attribute_name=external_id,ignore_filter_on_new=true,edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="External Id" max_length="40" name="external_id" type="string"/>
-        <element attributes="import_attribute_name=requested_end" label="Requested end" max_length="40" name="requested_end" type="glide_date_time"/>
-        <element attributes="import_attribute_name=start" label="Start" max_length="40" name="start" type="glide_date_time"/>
-        <element attributes="import_attribute_name=submitted_on" label="Submitted on" max_length="40" name="submitted_on" type="glide_date_time"/>
         <element attributes="import_attribute_name=u_account,edge_encryption_enabled=true" label="Account" max_length="40" name="u_account" type="string"/>
         <element attributes="import_attribute_name=u_account_name,edge_encryption_enabled=true" label="Account name" max_length="40" name="u_account_name" type="string"/>
         <element attributes="import_attribute_name=u_additional_site_details,edge_encryption_enabled=true" label="Additional site details" max_length="40" name="u_additional_site_details" type="string"/>
         <element attributes="import_attribute_name=u_description,edge_encryption_enabled=true" label="Description" max_length="40" name="u_description" type="string"/>
+        <element attributes="import_attribute_name=u_external_id,edge_encryption_enabled=true" label="External ID" max_length="40" name="u_external_id" type="string"/>
         <element attributes="import_attribute_name=u_id,edge_encryption_enabled=true" label="ID" max_length="40" name="u_id" type="string"/>
         <element attributes="import_attribute_name=u_requested_by,edge_encryption_enabled=true" label="Requested by" max_length="40" name="u_requested_by" type="string"/>
         <element attributes="import_attribute_name=u_requested_by_email,edge_encryption_enabled=true" label="Requested by email" max_length="40" name="u_requested_by_email" type="string"/>
         <element attributes="import_attribute_name=u_requested_by_name,edge_encryption_enabled=true" label="Requested by name" max_length="40" name="u_requested_by_name" type="string"/>
+        <element attributes="import_attribute_name=u_requested_end,edge_encryption_enabled=true" label="Requested end" max_length="40" name="u_requested_end" type="string"/>
         <element attributes="import_attribute_name=u_site,edge_encryption_enabled=true" label="Site" max_length="40" name="u_site" type="string"/>
         <element attributes="import_attribute_name=u_site_city,edge_encryption_enabled=true" label="Site city" max_length="40" name="u_site_city" type="string"/>
         <element attributes="import_attribute_name=u_site_country,edge_encryption_enabled=true" label="Site country" max_length="40" name="u_site_country" type="string"/>
@@ -23,11 +21,13 @@
         <element attributes="import_attribute_name=u_site_timezone,edge_encryption_enabled=true" label="Site timezone" max_length="40" name="u_site_timezone" type="string"/>
         <element attributes="import_attribute_name=u_site_zippostalcode,edge_encryption_enabled=true" label="Site zippostalcode" max_length="40" name="u_site_zippostalcode" type="string"/>
         <element attributes="import_attribute_name=u_sreq_id,edge_encryption_enabled=true" label="Sreq ID" max_length="40" name="u_sreq_id" type="string"/>
+        <element attributes="import_attribute_name=u_start,edge_encryption_enabled=true" label="Start" max_length="40" name="u_start" type="string"/>
         <element attributes="import_attribute_name=u_status,edge_encryption_enabled=true" label="Status" max_length="40" name="u_status" type="string"/>
-        <element attributes="import_attribute_name=u_string_2,edge_encryption_enabled=true" label="String 2" max_length="40" name="u_string_2" type="string"/>
+        <element attributes="import_attribute_name=u_submitted_on,edge_encryption_enabled=true" label="Submitted on" max_length="40" name="u_submitted_on" type="string"/>
         <element attributes="import_attribute_name=u_summary,edge_encryption_enabled=true" label="Summary" max_length="40" name="u_summary" type="string"/>
         <element attributes="import_attribute_name=u_task_type,edge_encryption_enabled=true" label="Task type" max_length="40" name="u_task_type" type="string"/>
         <element attributes="import_attribute_name=u_task_type_category,edge_encryption_enabled=true" label="Task type category" max_length="40" name="u_task_type_category" type="string"/>
         <element attributes="import_attribute_name=u_task_type_name,edge_encryption_enabled=true" label="Task type name" max_length="40" name="u_task_type_name" type="string"/>
+        <element attributes="import_attribute_name=u_test_field,edge_encryption_enabled=true" label="Test field" max_length="40" name="u_test_field" type="string"/>
     </element>
 </database>

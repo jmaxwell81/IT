@@ -16,7 +16,20 @@
         <element label="Requested End" max_length="40" name="requested_end" type="glide_date_time"/>
         <element choice="1" dependent="site_name" dependent_on_field="site_name" label="Site" max_length="80" name="site" type="string" use_dependent_field="true">
             <choice>
+                <element inactive_on_update="false" label="a3ac00000003gbyAAA" sequence="0" value="a3ac00000003gbyAAA"/>
                 <element inactive_on_update="false" label="a3ac00000003gN6AAI" sequence="0" value="a3ac00000003gN6AAI"/>
+                <element inactive_on_update="false" label="a3ac00000003gNBAAY" sequence="0" value="a3ac00000003gNBAAY"/>
+                <element inactive_on_update="false" label="a3ac0000000blcuAAA" sequence="0" value="a3ac0000000blcuAAA"/>
+                <element inactive_on_update="false" label="a3ac0000000bm32AAA" sequence="0" value="a3ac0000000bm32AAA"/>
+                <element inactive_on_update="false" label="a3ac0000000bmsAAAQ" sequence="0" value="a3ac0000000bmsAAAQ"/>
+                <element inactive_on_update="false" label="a3ac0000000bpPXAAY" sequence="0" value="a3ac0000000bpPXAAY"/>
+                <element inactive_on_update="false" label="a3ac0000000bpQfAAI" sequence="0" value="a3ac0000000bpQfAAI"/>
+                <element inactive_on_update="false" label="a3ac0000000bpQLAAY" sequence="0" value="a3ac0000000bpQLAAY"/>
+                <element inactive_on_update="false" label="a3ac0000000TjKtAAK" sequence="0" value="a3ac0000000TjKtAAK"/>
+                <element inactive_on_update="false" label="a3ac0000000TSaiAAG" sequence="0" value="a3ac0000000TSaiAAG"/>
+                <element inactive_on_update="false" label="a3ac0000000TYvNAAW" sequence="0" value="a3ac0000000TYvNAAW"/>
+                <element inactive_on_update="false" label="a3ac0000000ULueAAG" sequence="0" value="a3ac0000000ULueAAG"/>
+                <element inactive_on_update="false" label="a3ac0000000Xj0BAAS" sequence="0" value="a3ac0000000Xj0BAAS"/>
                 <element inactive="true" inactive_on_update="true" label="Choice 1" sequence="0" value="Choice 1"/>
             </choice>
         </element>
@@ -55,9 +68,11 @@
         <element label="Task Type Category" max_length="40" name="task_type_category" type="string"/>
         <element label="Task Type Name" max_length="40" name="task_type_name" type="string"/>
         <element attributes="edge_encryption_enabled=true" label="test field" max_length="40" name="test_field" type="string"/>
-        <element attributes="edge_encryption_enabled=true" label="Account" max_length="40" name="u_string_2" type="string"/>
         <index name="index">
             <element name="sreq_id"/>
+        </index>
+        <index name="index2">
+            <element name="id"/>
         </index>
     </element>
 </database>

@@ -12,22 +12,24 @@ ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProces
 	populateServiceRequests : function() {
 		try {
 			var r = new sn_ws.RESTMessageV2('x_291066_it.GetAllServiceRequests', 'Default GET');
-			var response = r.execute();			
+			var response = r.execute();
+			var httpStatus = response.getStatusCode();
 			
-			gs.info(response.getStatusCode());
+			gs.info("STATUS CODE FROM POPULATE SREQs: " + httpStatus);
 			
-			if(response.getStatusCode() === 200) {
-				var responseBody = JSON.parse(response.getBody());						
-				var gr;
+			if(httpStatus === 200) {
+				var responseBody = JSON.parse(response.getBody());	
+				gs.info("BODY BREFORE TO ADD SREQs TO ITHISTORIC TBALE: " + JSON.stringify(responseBody));
+				var gr;				
 				
-				for (var index = 0; index < responseBody.length ; index++) {
+				for (var index = responseBody.length -45; index < responseBody.length ; index++) {
 					gr = new GlideRecord("x_291066_it_ithistoric");
 					gr.initialize();				
 
 					// Saving in ITService table.
 					gr.u_id = responseBody[index].Id;
 					gr.u_account = responseBody[index].Account;
-					gr.u_account_name = responseBodydex[index]["Account.Name"];
+					gr.u_account_name = responseBody[index]["Account.Name"];
 
 					gr.u_site = responseBody[index].Site;
 					gr.u_site_name = responseBody[index]["Site.Name"];
@@ -50,12 +52,12 @@ ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProces
 					gr.u_requested_by_email = responseBody[index]["Requested_By.Email"];
 					gr.u_requested_by_name = responseBody[index]["Requested_By.Name"];
 
-					gr.start = responseBody[index]["Requested_Start"];
-					gr.requested_end = responseBody[index]["Requested_End"];
+					gr.u_start = responseBody[index]["Requested_Start"];
+					gr.u_requested_end = responseBody[index]["Requested_End"];
 					gr.submitted_on = new GlideDateTime();
-					gr.insert();
+					gr.insert();					
 				}		
-			}			
+			}
 		}
 		catch(ex) {			
 			gs.error(ex.message);
@@ -67,25 +69,30 @@ ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProces
 			//var r = new sn_ws.RESTMessageV2('x_291066_it.CreateServiceRequest', 'Default POST');
 			var r = new sn_ws.RESTMessageV2('x_291066_it.New_CreateServiceRequest', 'Default POST');
 			var sreq = this.getParameter("sreq");
-			var sreqObject = JSON.parse(sreq);			
+			gs.info("BODY FOR CREATING NEW SREQ: " + sreq);
+			var sreqObject = JSON.parse(sreq);				
 			
-			// If task type doesn't exist on SiteHands it's just saved on ServiceNow
-			if (!this.isCreatedOnServiceNow(sreqObject.task)) {
+			gs.info("BODY CONTENT: " + JSON.stringify(sreqObject));
+			
+			// If task type doesn't exist on SiteHands it's just saved on ServiceNow			
+			if (!this.isCreatedOnServiceNow(sreqObject.Task_Type_Record)) {
 				
-				var body = this.getValidInputFields(sreqObject);
+				var body = this.getValidInputFields(sreqObject);				
 				
 				if (Object.keys(body).length === 0 && body.constructor === Object){
 					throw "Some mandatory field is empty or null, Please check it";
 				}
 				
 				// Check if site exist on SiteHands if it doesn't exist it is added.
-				var sitesManager = new SitesManager();
-				var site = sitesManager.getSiteById(body.Site);					
-				if (!site) {
+				var sitesManager = new SitesManager();				
+				var site = sitesManager.getSiteById(body.Site);
+				
+				if (!site) {					
 					gs.info("The ServiceNow's site is being added to SiteHands");
 					var serviceNowSite = new GlideRecord("x_291066_it_sites");
-					serviceNowSite.addQuery("id", body.Site.toString());
-					serviceNowSite.query();	
+					serviceNowSite.addQuery("number", body.Site.toString());
+					serviceNowSite.query();
+					
 					while(serviceNowSite.next()) {
 						var newSite = {						
 							"Name": serviceNowSite.name.toString(),
@@ -96,10 +103,12 @@ ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProces
 							"State_Province": serviceNowSite.state_province.toString(),
 							"Zip_Postal_Code": serviceNowSite.zip_postal_code.toString(),							
 							"Short_Description": serviceNowSite.short_description.toString()						
-						};					
+						};		
+						gs.info("SITE TO ADD: " + JSON.stringify(newSite));
 						body.Site = sitesManager.addSite(newSite).Id.toString();					
 					}					
 				}
+				
 				r.setRequestHeader("Content-Type", "application/json");
 				r.setRequestBody(JSON.stringify(body));
 
@@ -113,8 +122,7 @@ ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProces
 				if(httpStatus === 200) {					
 					// populating the missing fields
 					this.populateTheRestFields(JSON.parse(bodyContent));					
-				}
-				gs.info("OHOHOHOHOHOHOHOHHOH");
+				}				
 				return JSON.stringify(bodyContent);
 			}
 		}
@@ -229,13 +237,13 @@ ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProces
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-11-19 21:02:14</sys_created_on>
         <sys_id>dbe97e7a4f3de300cd558c318110c732</sys_id>
-        <sys_mod_count>218</sys_mod_count>
+        <sys_mod_count>245</sys_mod_count>
         <sys_name>ServiceRequestManager</sys_name>
         <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
         <sys_update_name>sys_script_include_dbe97e7a4f3de300cd558c318110c732</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-12-03 17:51:19</sys_updated_on>
+        <sys_updated_on>2018-12-03 23:53:53</sys_updated_on>
     </sys_script_include>
 </record_update>
