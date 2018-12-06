@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>start</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Validate_Requested_Start</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+   }
+
+	console.log("NEW VAlue = " + newValue);
+   //Type appropriate comment here, and begin script below
+	var utils = new GlideAjax('Utils');
+	utils.addParam('sysparm_name', 'isDatePast');
+	utils.addParam('startDate', newValue);	
+	utils.getXMLAnswer(callBack);
+	
+	function callBack(answer) {
+		console.log("answer> " + answer);		
+		if (answer) {
+			g_form.addErrorMessage("The requested start date cannot be in the past.");		
+			//return false;
+		}		
+	}	
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-12-06 02:27:10</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>22ec52444fd26300cd558c318110c717</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>Validate_Requested_Start</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
+        <sys_update_name>sys_script_client_22ec52444fd26300cd558c318110c717</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-12-06 03:59:06</sys_updated_on>
+        <table>x_291066_it_sreq</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

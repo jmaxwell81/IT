@@ -26,7 +26,7 @@ SitesManager.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 					}
 				);
 			}			
-			//gs.info("getTaskTypes ---> " + JSON.stringify(sites));
+			gs.info("getSites ---> " + JSON.stringify(sites));
 			return JSON.stringify(sites);
 
 		} catch(ex){
@@ -123,13 +123,13 @@ SitesManager.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-11-26 16:41:54</sys_created_on>
         <sys_id>057002454f022300cd558c318110c7a1</sys_id>
-        <sys_mod_count>23</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_name>SitesManager</sys_name>
         <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
         <sys_update_name>sys_script_include_057002454f022300cd558c318110c7a1</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-12-03 23:34:55</sys_updated_on>
+        <sys_updated_on>2018-12-06 15:32:24</sys_updated_on>
     </sys_script_include>
 </record_update>

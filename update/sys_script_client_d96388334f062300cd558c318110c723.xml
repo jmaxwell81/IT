@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>task_type</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>ShowDeviceInstallation_CustomForm</name>
+        <order/>
+        <script><![CDATA[g_form.setSectionDisplay("device_additionalsiteinformation", true);		
+		g_form.setSectionDisplay("device_ticketdetails", true);	function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+   }
+	
+	console.log("-------->" + g_form.getSectionNames());
+   //device_additionalsiteinformation,device_ticketdetails
+	if (newValue && newValue === "a3Vc0000000bLnPEAU") {		
+	//if (newValue && newValue === "test") {		
+		g_form.setSectionDisplay("additional_siteinformationdevice", true);		
+		g_form.setSectionDisplay("ticket_detailsdevice", true);		
+	} else {
+		g_form.setSectionDisplay("additional_siteinformationdevice", false);		
+		g_form.setSectionDisplay("ticket_detailsdevice", false);			
+	}
+   
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-12-04 20:35:01</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d96388334f062300cd558c318110c723</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>ShowDeviceInstallation_CustomForm</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
+        <sys_update_name>sys_script_client_d96388334f062300cd558c318110c723</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-12-05 01:26:36</sys_updated_on>
+        <table>x_291066_it_sreq</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

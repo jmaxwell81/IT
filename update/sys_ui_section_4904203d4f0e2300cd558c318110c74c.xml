@@ -1,21 +1,245 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_ui_section caption="Break Fix" section_id="4904203d4f0e2300cd558c318110c74c" sys_domain="global" table="x_291066_it_sreq" version="3" view="">
+    <sys_ui_section caption="Break Fix Details" section_id="4904203d4f0e2300cd558c318110c74c" sys_domain="global" table="x_291066_it_sreq" version="3" view="">
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>12M.x_291066_it_sreq.x_291066_it_breakfix_customform.service_request_name</element>
+            <element>serial_number</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-11-30 01:54:22</sys_created_on>
-            <sys_id>a8dc534e4fca2300cd558c318110c742</sys_id>
+            <sys_created_on>2018-12-04 14:53:40</sys_created_on>
+            <sys_id>0f85f2a34f422300cd558c318110c7ff</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
-            <sys_ui_section caption="Break Fix" display_value="Break Fix" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
+            <sys_ui_section caption="Break Fix Details" display_value="Break Fix Details" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-11-30 01:54:22</sys_updated_on>
+            <sys_updated_on>2018-12-04 14:53:40</sys_updated_on>
             <sys_user/>
-            <type>list</type>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>shipping_company</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 14:53:40</sys_created_on>
+            <sys_id>8f85f2a34f422300cd558c318110c7ff</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Break Fix Details" display_value="Break Fix Details" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 14:53:40</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>old_hard_drive_serial_number</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 14:53:40</sys_created_on>
+            <sys_id>038536a34f422300cd558c318110c700</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Break Fix Details" display_value="Break Fix Details" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 14:53:40</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>new_hard_drive_serial_number</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 14:53:40</sys_created_on>
+            <sys_id>838536a34f422300cd558c318110c700</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Break Fix Details" display_value="Break Fix Details" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 14:53:40</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>tracking_number</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 14:53:40</sys_created_on>
+            <sys_id>078536a34f422300cd558c318110c700</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Break Fix Details" display_value="Break Fix Details" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 14:53:40</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>was_device_shipped</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 14:53:40</sys_created_on>
+            <sys_id>878536a34f422300cd558c318110c700</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Break Fix Details" display_value="Break Fix Details" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 14:53:40</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>model</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 14:53:40</sys_created_on>
+            <sys_id>0b8536a34f422300cd558c318110c700</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Break Fix Details" display_value="Break Fix Details" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 14:53:40</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>make</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 14:53:40</sys_created_on>
+            <sys_id>8b8536a34f422300cd558c318110c700</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Break Fix Details" display_value="Break Fix Details" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 14:53:40</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 14:53:40</sys_created_on>
+            <sys_id>0f8536a34f422300cd558c318110c700</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Break Fix Details" display_value="Break Fix Details" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 14:53:40</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>asset_tag</element>
+            <position>9</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 14:53:40</sys_created_on>
+            <sys_id>8f8536a34f422300cd558c318110c700</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Break Fix Details" display_value="Break Fix Details" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 14:53:40</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>rma</element>
+            <position>10</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 14:53:40</sys_created_on>
+            <sys_id>038536a34f422300cd558c318110c701</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Break Fix Details" display_value="Break Fix Details" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 14:53:40</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>rack_grid_location</element>
+            <position>11</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 14:53:40</sys_created_on>
+            <sys_id>838536a34f422300cd558c318110c701</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Break Fix Details" display_value="Break Fix Details" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 14:53:40</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>original_assignee_group</element>
+            <position>12</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 14:53:40</sys_created_on>
+            <sys_id>078536a34f422300cd558c318110c701</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Break Fix Details" display_value="Break Fix Details" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 14:53:40</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>hostname</element>
+            <position>13</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 14:53:40</sys_created_on>
+            <sys_id>878536a34f422300cd558c318110c701</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Break Fix Details" display_value="Break Fix Details" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 14:53:40</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>hard_drive_removed</element>
+            <position>14</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 14:53:40</sys_created_on>
+            <sys_id>0b8536a34f422300cd558c318110c701</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Break Fix Details" display_value="Break Fix Details" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 14:53:40</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>assignee_group</element>
+            <position>15</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 14:53:40</sys_created_on>
+            <sys_id>8b8536a34f422300cd558c318110c701</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Break Fix Details" display_value="Break Fix Details" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 14:53:40</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>form_completed</element>
+            <position>16</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 14:53:40</sys_created_on>
+            <sys_id>0f8536a34f422300cd558c318110c701</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Break Fix Details" display_value="Break Fix Details" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 14:53:40</sys_updated_on>
+            <sys_user/>
+            <type/>
         </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
-            <caption>Break Fix</caption>
+            <caption>Break Fix Details</caption>
             <header>false</header>
             <name>x_291066_it_sreq</name>
             <roles/>
@@ -25,15 +249,15 @@
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_id>4904203d4f0e2300cd558c318110c74c</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_name>Break Fix</sys_name>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_name>Break Fix Details</sys_name>
             <sys_overrides/>
             <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
             <sys_policy/>
             <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
             <sys_update_name>sys_ui_section_4904203d4f0e2300cd558c318110c74c</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-11-28 17:48:27</sys_updated_on>
+            <sys_updated_on>2018-12-04 14:53:39</sys_updated_on>
             <sys_user/>
             <title>false</title>
             <view display_value="Default view" name="NULL">Default view</view>

@@ -17,16 +17,100 @@
         <sys_ui_form_section action="INSERT_OR_UPDATE">
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 14:41:51</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>ded2b6234f422300cd558c318110c766</sys_id>
+            <sys_mod_count>4</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_291066_it_sreq" name="x_291066_it_sreq" sys_domain="global" view="Default view">8314cda34f356700cd558c318110c71f</sys_ui_form>
+            <sys_ui_section caption="Ticket Details" display_value="Ticket Details" name="x_291066_it_sreq" sys_domain="global" view="Default view">8ed276234f422300cd558c318110c751</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 20:46:10</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 14:43:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c053fa234f422300cd558c318110c745</sys_id>
+            <sys_mod_count>4</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_291066_it_sreq" name="x_291066_it_sreq" sys_domain="global" view="Default view">8314cda34f356700cd558c318110c71f</sys_ui_form>
+            <sys_ui_section caption="Additional Site Information" display_value="Additional Site Information" name="x_291066_it_sreq" sys_domain="global" view="Default view">c8537a234f422300cd558c318110c769</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 20:46:10</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 14:45:05</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d9937e234f422300cd558c318110c7ad</sys_id>
+            <sys_mod_count>4</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_291066_it_sreq" name="x_291066_it_sreq" sys_domain="global" view="Default view">8314cda34f356700cd558c318110c71f</sys_ui_form>
+            <sys_ui_section caption="Cost Allocations" display_value="Cost Allocations" name="x_291066_it_sreq" sys_domain="global" view="Default view">19937e234f422300cd558c318110c7aa</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 20:46:10</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 14:46:04</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>40d332634f422300cd558c318110c787</sys_id>
+            <sys_mod_count>4</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_291066_it_sreq" name="x_291066_it_sreq" sys_domain="global" view="Default view">8314cda34f356700cd558c318110c71f</sys_ui_form>
+            <sys_ui_section caption="Access Details" display_value="Access Details" name="x_291066_it_sreq" sys_domain="global" view="Default view">48d332634f422300cd558c318110c783</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 20:46:10</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
             <sys_created_on>2018-11-28 17:48:27</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_id>c104203d4f0e2300cd558c318110c74e</sys_id>
-            <sys_mod_count>0</sys_mod_count>
+            <sys_mod_count>7</sys_mod_count>
             <sys_overrides/>
             <sys_ui_form display_value="x_291066_it_sreq" name="x_291066_it_sreq" sys_domain="global" view="Default view">8314cda34f356700cd558c318110c71f</sys_ui_form>
-            <sys_ui_section caption="Break Fix" display_value="Break Fix" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
+            <sys_ui_section caption="Break Fix Details" display_value="Break Fix Details" name="x_291066_it_sreq" sys_domain="global" view="Default view">4904203d4f0e2300cd558c318110c74c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-11-28 17:48:27</sys_updated_on>
+            <sys_updated_on>2018-12-04 20:46:10</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 20:31:29</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>afd204334f062300cd558c318110c72c</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_291066_it_sreq" name="x_291066_it_sreq" sys_domain="global" view="Default view">8314cda34f356700cd558c318110c71f</sys_ui_form>
+            <sys_ui_section caption="Additional Site Information/Device" display_value="Additional Site Information/Device" name="x_291066_it_sreq" sys_domain="global" view="Default view">ebd204334f062300cd558c318110c728</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 20:46:10</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 20:26:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7db184ff4fc22300cd558c318110c72d</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_291066_it_sreq" name="x_291066_it_sreq" sys_domain="global" view="Default view">8314cda34f356700cd558c318110c71f</sys_ui_form>
+            <sys_ui_section caption="Ticket Details/Device" display_value="Ticket Details/Device" name="x_291066_it_sreq" sys_domain="global" view="Default view">f9b184ff4fc22300cd558c318110c729</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 20:46:10</sys_updated_on>
         </sys_ui_form_section>
         <sys_ui_form action="INSERT_OR_UPDATE">
             <name>x_291066_it_sreq</name>

@@ -20,11 +20,11 @@ TaskTypesManager.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
 
 			while (taskTypeRecords.next())
 			{
-				gs.info(taskTypeRecords.name); 
+				//gs.info(taskTypeRecords.name); 
 				taskTypes.push(
 					{
 						"name": taskTypeRecords.name.toString(),
-						"id": taskTypeRecords.id.toString()
+						"id": taskTypeRecords.id? taskTypeRecords.id.toString() : taskTypeRecords.number.toString()
 					}
 				);
 			}
@@ -119,13 +119,13 @@ TaskTypesManager.prototype = Object.extendsObject(global.AbstractAjaxProcessor, 
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-11-22 23:26:33</sys_created_on>
         <sys_id>fd4736374f71a700cd558c318110c797</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>TaskTypesManager</sys_name>
         <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
         <sys_update_name>sys_script_include_fd4736374f71a700cd558c318110c797</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-11-23 19:12:49</sys_updated_on>
+        <sys_updated_on>2018-12-05 00:56:14</sys_updated_on>
     </sys_script_include>
 </record_update>

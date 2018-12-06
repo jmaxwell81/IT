@@ -18,7 +18,7 @@ ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProces
 			gs.info("STATUS CODE FROM POPULATE SREQs: " + httpStatus);
 			
 			if(httpStatus === 200) {
-				var responseBody = JSON.parse(response.getBody());	
+				var responseBody = JSON.parse(response.getBody());
 				gs.info("BODY BREFORE TO ADD SREQs TO ITHISTORIC TBALE: " + JSON.stringify(responseBody));
 				var gr;				
 				
@@ -64,28 +64,30 @@ ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProces
 		}		
 	},
 	
-	createServiceRequest: function() {
+	createServiceRequest: function(sreqObject) {
 		try {
 			//var r = new sn_ws.RESTMessageV2('x_291066_it.CreateServiceRequest', 'Default POST');
 			var r = new sn_ws.RESTMessageV2('x_291066_it.New_CreateServiceRequest', 'Default POST');
-			var sreq = this.getParameter("sreq");
-			gs.info("BODY FOR CREATING NEW SREQ: " + sreq);
-			var sreqObject = JSON.parse(sreq);				
+			//var sreq = this.getParameter("sreq");
+			//gs.info("BODY FOR CREATING NEW SREQ: " + sreq);
+			//var sreqObject = JSON.parse(sreq);				
 			
 			gs.info("BODY CONTENT: " + JSON.stringify(sreqObject));
+			var body = this.getValidInputFields(sreqObject);
+			
+			if (Object.keys(body).length === 0 && body.constructor === Object){
+				throw "Some mandatory field is empty or null, Please check it";
+			}
+			
+			this.populateMissingFields(body);
 			
 			// If task type doesn't exist on SiteHands it's just saved on ServiceNow			
 			if (!this.isCreatedOnServiceNow(sreqObject.Task_Type_Record)) {
 				
-				var body = this.getValidInputFields(sreqObject);				
-				
-				if (Object.keys(body).length === 0 && body.constructor === Object){
-					throw "Some mandatory field is empty or null, Please check it";
-				}
-				
 				// Check if site exist on SiteHands if it doesn't exist it is added.
-				var sitesManager = new SitesManager();				
-				var site = sitesManager.getSiteById(body.Site);
+				var sitesManager = new SitesManager();	
+				gs.info("SITE ----> " + body.Site.toString());
+				var site = sitesManager.getSiteById(body.Site.toString());
 				
 				if (!site) {					
 					gs.info("The ServiceNow's site is being added to SiteHands");
@@ -107,7 +109,7 @@ ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProces
 						gs.info("SITE TO ADD: " + JSON.stringify(newSite));
 						body.Site = sitesManager.addSite(newSite).Id.toString();					
 					}					
-				}
+				}			
 				
 				r.setRequestHeader("Content-Type", "application/json");
 				r.setRequestBody(JSON.stringify(body));
@@ -117,18 +119,21 @@ ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProces
 				var bodyContent = response.getBody();
 
  				gs.info("STATUS CODE FROM CREATE A SREQ: " + httpStatus);		
- 				gs.info("BODY: " + bodyContent);				
+ 				gs.info("BODY: " + bodyContent);
 				
-				if(httpStatus === 200) {					
-					// populating the missing fields
-					this.populateTheRestFields(JSON.parse(bodyContent));					
+				if(httpStatus === 200) {
+// 					gs.info("EXTERNAL ID: " + body.External_ID.toString());
+// 					gs.info("sreq ID: " + sreq_id);					
+					this.populateSreqID(body.External_ID.toString(), JSON.parse(bodyContent).Name.toString());
 				}				
 				return JSON.stringify(bodyContent);
+			} else {
+				gs.info("The task type is from ServiceNow, so it was not created on SiteHands!!");				
 			}
 		}
 		catch(ex) {
 			gs.error(ex.message);
-			gs.addErrorMessage(ex.message);
+			gs.addErrorMessage("An error ocurred when a new SREQ was being added!! " + ex.message);
 		}
 	},
 	
@@ -147,10 +152,60 @@ ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProces
 	
 	isCreatedOnServiceNow: function(taskTypeId) {			
 		var taskTypeRecords = new GlideRecord("x_291066_it_tasktypes");		
-		taskTypeRecords.addQuery("id", taskTypeId);
+		taskTypeRecords.addQuery("number", taskTypeId);
 		taskTypeRecords.addQuery("createdon", "service now");
 		taskTypeRecords.query();	
 		return taskTypeRecords.next();
+	},
+	
+	// This will populate the missing fields from serviceNow's tables
+	populateMissingFields: function(body) {
+		
+		//var body = this.getParameter("body");
+		//gs.info("BODY FOR ADDING THE MISSING FIELDS NEW SREQ: " + body);
+		//var sreqObject = JSON.parse(body);
+		gs.info("Populating the missing fields!!");
+		
+		var taskType = new GlideRecord("x_291066_it_tasktypes");		
+		if (body.Task_Type_Record && body.Task_Type_Record.toString().startsWith("TASK")) {			
+			taskType.get("number", body.Task_Type_Record.toString());
+		} else {			
+			taskType.get("id", body.Task_Type_Record.toString());
+		}	
+
+		var siteRecord = new GlideRecord("x_291066_it_sites");		
+		if (body.Site && body.Site.toString().startsWith("SITE")) {			
+			siteRecord.get("number", body.Site.toString());			
+		} else {			
+			gs.info("Body site" + body.Site.toString());
+			siteRecord.get("id", body.Site.toString());
+		}	
+		
+		gs.info("siteRecord.name: " + siteRecord.name);
+
+		var account = new GlideRecord("x_291066_it_itaccount");		
+		account.get("id", body.Account.toString());
+
+		var sreq = new GlideRecord('x_291066_it_sreq');		
+		sreq.get("external_id", body.External_ID.toString());	
+		
+		if (sreq) {			
+			sreq.account_name = account.name;
+			sreq.site_name = siteRecord.name;
+			sreq.task_type_name = taskType.name;
+			sreq.status = body.Status.toString();
+			sreq.submitted_on = new GlideDateTime();
+			sreq.update('Updating SREQ fields');
+		}
+	},
+	
+	populateSreqID: function(external_id, sreq_id) {
+		if (sreq_id) {
+			var sreq = new GlideRecord("x_291066_it_sreq");
+			sreq.get("external_id", external_id);
+			sreq.sreq_id = sreq_id;
+			sreq.update("Adding the sreq_id");
+		}		
 	},
 	
 	populateTheRestFields: function(responseBody) {
@@ -240,13 +295,13 @@ ServiceRequestManager.prototype = Object.extendsObject(global.AbstractAjaxProces
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-11-19 21:02:14</sys_created_on>
         <sys_id>dbe97e7a4f3de300cd558c318110c732</sys_id>
-        <sys_mod_count>246</sys_mod_count>
+        <sys_mod_count>309</sys_mod_count>
         <sys_name>ServiceRequestManager</sys_name>
         <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
         <sys_update_name>sys_script_include_dbe97e7a4f3de300cd558c318110c732</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-12-04 00:05:38</sys_updated_on>
+        <sys_updated_on>2018-12-06 17:43:21</sys_updated_on>
     </sys_script_include>
 </record_update>

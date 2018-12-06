@@ -32,10 +32,10 @@
 	siteManager.getXML(call_Back);
 	
 	function call_Back(response) {
-		if (response.status === 200) {
-			alert("The Sites were populated successfully!!");
+		if (response.status === 200) {			
 			location.reaload(true);
-		}		
+		}
+		//alert("The Sites were populated successfully!!");
 	}
 }
 ]]></script>
@@ -49,7 +49,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f4a10e454f022300cd558c318110c775</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Refresh Sites</sys_name>
         <sys_overrides/>
         <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
@@ -57,7 +57,7 @@
         <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
         <sys_update_name>sys_ui_action_f4a10e454f022300cd558c318110c775</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-11-26 16:49:17</sys_updated_on>
+        <sys_updated_on>2018-12-05 01:43:15</sys_updated_on>
         <table>x_291066_it_sites</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_291066_it.Utils</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>Utils</name>
+        <script><![CDATA[var Utils = Class.create();
+Utils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+// 	initialize: function() {
+//     },
+	
+	isDatePast: function(){
+		gs.info("FROM isDatePast function!!");
+		// Create GlideDateTime objects for the current date and the passed in date
+		var strDate = this.getParameter("startDate");
+		
+		gs.info("strDate ----> " + strDate);		
+		
+		var rightnow = new GlideDateTime();
+		gs.info("RIGHT NOW DATE: " + rightnow);
+		var testdate = new GlideDateTime(strDate);
+		
+		// If the testdate is before rightnow, return true, else return false
+		if (testdate.before(rightnow)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	},
+	
+	isDateToday: function() {
+		var rightnow = new GlideDateTime();		
+		var whenNeeded = new GlideDateTime(current.u_when_needed);
+		
+		var today = rightnow.getLocalDate();
+		var isToday = whenNeeded.getLocalDate();
+
+		if (today.compareTo(isToday) == 0) {
+			gs.addErrorMessage("You cannot submit Service request for today");
+			current.setAbortAction(true);
+		}
+	},
+	
+    type: 'Utils'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-12-06 02:46:55</sys_created_on>
+        <sys_id>2b0226084fd26300cd558c318110c7ef</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Utils</sys_name>
+        <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
+        <sys_update_name>sys_script_include_2b0226084fd26300cd558c318110c7ef</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-12-06 03:56:26</sys_updated_on>
+    </sys_script_include>
+</record_update>

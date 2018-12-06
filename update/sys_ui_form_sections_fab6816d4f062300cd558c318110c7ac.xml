@@ -80,7 +80,7 @@
             <sys_mod_count>4</sys_mod_count>
             <sys_overrides/>
             <sys_ui_form display_value="x_291066_it_breakfix_customform" name="x_291066_it_breakfix_customform" sys_domain="global" view="Default view">fab6816d4f062300cd558c318110c7ac</sys_ui_form>
-            <sys_ui_section caption="Break/Fix Details" display_value="Break/Fix Details" name="x_291066_it_breakfix_customform" sys_domain="global" view="Default view">beb6816d4f062300cd558c318110c7ab</sys_ui_section>
+            <sys_ui_section caption="Break Fix Details" display_value="Break Fix Details" name="x_291066_it_breakfix_customform" sys_domain="global" view="Default view">beb6816d4f062300cd558c318110c7ab</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2018-11-28 02:28:53</sys_updated_on>
         </sys_ui_form_section>

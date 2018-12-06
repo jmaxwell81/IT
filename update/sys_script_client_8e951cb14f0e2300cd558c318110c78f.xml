@@ -11,16 +11,42 @@
         <name>ShowBreakFix_CustomForm</name>
         <order/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+	console.log("NEW VALUE 0 -----> " + newValue);
    if (isLoading || newValue === '') {
       return;
    }
 
     //Display the BreakFix custom form when the task type changed.	
 	//BreakFix task type id is 3Vc0000000bGjUEAU
+// 	console.log("NEW VALUE -----> " + newValue);
+// 	console.log("GET SECTIONS -----> " + g_form.getSectionNames());
+	//ticket_details,additional_siteinformation,cost_allocations,access_details,break_fixdetails
 	if (newValue && newValue === "a3Vc0000000bGjUEAU") {		
-		g_form.setSectionDisplay("break_fix", true);		
+		g_form.setSectionDisplay("break_fixdetails", true);		
+		g_form.setSectionDisplay("ticket_details", true);
+		g_form.setSectionDisplay("additional_siteinformation", true);
+		g_form.setSectionDisplay("cost_allocations", true);
+		g_form.setSectionDisplay("access_details", true);
+		
+		g_form.setMandatory("service_desk_application", true);
+		g_form.setMandatory("service_desk_ticket_number", true);
+		g_form.setMandatory("sla", true);
+		g_form.setMandatory("priority", true);
+		g_form.setMandatory("primary_cost_center", true);		
+		g_form.setMandatory("cost_allocation_1", true);
 	} else {
-		g_form.setSectionDisplay("break_fix", false);		
+		g_form.setMandatory("service_desk_application", false);
+		g_form.setMandatory("service_desk_ticket_number", false);
+		g_form.setMandatory("sla", false);
+		g_form.setMandatory("priority", false);
+		g_form.setMandatory("primary_cost_center", false);		
+		g_form.setMandatory("cost_allocation_1", false);
+		
+		g_form.setSectionDisplay("break_fixdetails", false);		
+		g_form.setSectionDisplay("ticket_details", false);
+		g_form.setSectionDisplay("additional_siteinformation", false);
+		g_form.setSectionDisplay("cost_allocations", false);
+		g_form.setSectionDisplay("access_details", false);
 	}
 }]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
@@ -29,7 +55,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>8e951cb14f0e2300cd558c318110c78f</sys_id>
-        <sys_mod_count>27</sys_mod_count>
+        <sys_mod_count>40</sys_mod_count>
         <sys_name>ShowBreakFix_CustomForm</sys_name>
         <sys_overrides/>
         <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
@@ -37,7 +63,7 @@
         <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
         <sys_update_name>sys_script_client_8e951cb14f0e2300cd558c318110c78f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-11-28 18:04:55</sys_updated_on>
+        <sys_updated_on>2018-12-05 22:40:34</sys_updated_on>
         <table>x_291066_it_sreq</table>
         <type>onChange</type>
         <ui_type>0</ui_type>

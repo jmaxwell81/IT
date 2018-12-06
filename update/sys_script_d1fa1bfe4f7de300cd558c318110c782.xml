@@ -3,10 +3,10 @@
         <abort_action>false</abort_action>
         <access>package_private</access>
         <action_delete>false</action_delete>
-        <action_insert>false</action_insert>
+        <action_insert>true</action_insert>
         <action_query>false</action_query>
-        <action_update>true</action_update>
-        <active>false</active>
+        <action_update>false</action_update>
+        <active>true</active>
         <add_message>true</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -15,10 +15,12 @@
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition/>
+        <filter_condition table="x_291066_it_sreq">task_typeLIKEa3Vc0000000bLnPEAU^EQ<item endquery="false" field="task_type" goto="false" newquery="false" operator="LIKE" or="false" value="a3Vc0000000bLnPEAU"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
         <is_rest>false</is_rest>
         <message><![CDATA[<p><em style="font-size: 18.6667px;"><strong>A new Service Request was added successfully!!!!</strong></em></p>]]></message>
-        <name>Update SREQ fields</name>
+        <name>CreateSREQ_DeviceInstallation</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -28,49 +30,37 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {	
-	gs.info("CALLING THE BUSINESS RULE: CREATE SERVICE REQUEST!!!");	
-	gs.info("BUSINESS RULE account = " + current.account);	
-	gs.info("BUSINESS RULE site = " + current.site);		
-	gs.info("BUSINESS RULE sreq_id = " + current.sreq_id);
-	gs.info("BUSINESS RULE EXTERNAL ID = " + current.external_id);
-	gs.info("BUSINESS RULE SYS ID = " + current.sys_id);
+	gs.info("Adding a new SREQ with Device Installation values!!");
 	
-	var customFormManager = new CustomFormManager();
-	customFormManager.getBreakFixValues(current.sys_id);
-	customFormManager.getXML(getBreakFixValues);
+	var newServiceRequest = {
+		"Account": current.account? current.account.toString() : null,
+		"Site": current.site? current.site.toString() : null,
+		"Task_Type_Record": current.task_type? current.task_type.toString() : null,
+		"Summary": current.summary? current.summary.toString() : null,
+		"Description": current.description? current.description.toString() : null,
+		"Requested_Start": current.start? current.start.toString() : null,
+		"Requested_End": current.requested_end? current.requested_end.toString() : null,
+		"External_ID": current.external_id? current.external_id.toString() : null,
+		"State": "New",
+		"Status": "Draft",
+		
+		//Ticket Details
+		"&IsRevisit": current.is_this_a_follow_up_to_previous_work? current.is_this_a_follow_up_to_previous_work.toString() : null,
+		"&CopperToolsRequired": current.are_copper_testing_tools_required? current.are_copper_testing_tools_required.toString() : null,
+		"&FiberToolsRequired": current.are_fiber_testing_tools_required? current.are_fiber_testing_tools_required.toString(): null,
+		
+		//Additional Site Information
+		"&SpecialAccess": current.is_special_access_required? current.is_special_access_required.toString() : null,
+		"&SpaceinRack": current.is_there_adequate_space_in_the_rack? current.is_there_adequate_space_in_the_rack.toString() : null,
+		"&AdequateConnections": current.are_there_adequate_connections? current.are_there_adequate_connections.toString() : null,
+		"&Power": current.is_there_adequate_power? current.is_there_adequate_power : null
+	};	
 	
-	var breakFixValues = {};
+	gs.info("DEVICE INSTALLATION: " + JSON.stringify(newServiceRequest));
+		
+	var sreq = new ServiceRequestManager();
+	sreq.createServiceRequest(newServiceRequest);
 	
-	function getBreakFixValues(response) {
-		if (response.status === 200) {
-			breakFixValues = response.responseXML.documentElement.getAttribute("answer").evalJSON();
-			gs.info("SUCCESSFULLY");
-		} else {
-			gs.info("ERROR!!");
-		}
-	}
-	
-	gs.info("BUSINESS RULE JSON = " + JSON.stringify(breakFixValues));
-	
-	var serviceRequestManager = new ServiceRequestManager();
-	serviceRequestManager.updateServiceRequest(JSON.stringify(breakFixValues), current.sreq_id);
-	serviceRequestManager.getXML(updateSREQ);
-	
-	function updateSREQ(response) {
-		if (response.status === 200) {
-			gs.info("UPDATED SUCCESSFULLY");
-		} else {
-			gs.info("ERROR WHEN A SREQ WAS UPDATIG!!");
-		}
-	}
-	
-	
-// 	var sreqManager = new ServiceRequestManager();
-// 	var external_id = current.external_id;
-	
-// 	if (external_id) {
-// 		sreqManager.populateTheRestFields(external_id);
-// 	}
 })(current, previous);
 
 
@@ -160,17 +150,17 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>d1fa1bfe4f7de300cd558c318110c782</sys_id>
-        <sys_mod_count>37</sys_mod_count>
-        <sys_name>Update SREQ fields</sys_name>
+        <sys_mod_count>47</sys_mod_count>
+        <sys_name>CreateSREQ_DeviceInstallation</sys_name>
         <sys_overrides/>
         <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
         <sys_policy/>
         <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
         <sys_update_name>sys_script_d1fa1bfe4f7de300cd558c318110c782</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-11-30 22:27:47</sys_updated_on>
+        <sys_updated_on>2018-12-04 21:26:12</sys_updated_on>
         <template/>
-        <when>after</when>
+        <when>async</when>
     </sys_script>
     <sys_translated_text action="delete_multiple" query="documentkey=d1fa1bfe4f7de300cd558c318110c782"/>
 </record_update>

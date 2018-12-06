@@ -1,20 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element label="SREQ" max_length="40" name="x_291066_it_sreq" type="collection">
-        <element attributes="edge_encryption_enabled=true" choice="1" dependent="u_string_2" dependent_on_field="u_string_2" label="Account" max_length="40" name="account" type="string" use_dependent_field="true">
+        <element attributes="edge_encryption_enabled=true" choice="1" dependent="u_string_2" dependent_on_field="u_string_2" label="Account" mandatory="true" max_length="40" name="account" type="string" use_dependent_field="true">
             <choice>
                 <element dependent_value="a1Yc0000001rpApEAI" inactive_on_update="false" label="a1Yc0000001rpApEAI" value="a1Yc0000001rpApEAI"/>
             </choice>
         </element>
         <element label="Account Name" max_length="40" name="account_name" type="string"/>
         <element label="Additional Site details" max_length="40" name="additional_site_details" type="string"/>
+        <element choice="1" label="Are copper testing tools required?" max_length="40" name="are_copper_testing_tools_required" type="string">
+            <choice>
+                <element inactive_on_update="false" label="yes" sequence="0" value="yes"/>
+                <element inactive_on_update="false" label="no" sequence="1" value="no"/>
+            </choice>
+        </element>
+        <element choice="1" label="Are fiber testing tools required?" max_length="40" name="are_fiber_testing_tools_required" type="string">
+            <choice>
+                <element inactive_on_update="false" label="yes" sequence="0" value="yes"/>
+                <element inactive_on_update="false" label="no" sequence="1" value="no"/>
+            </choice>
+        </element>
+        <element choice="1" label="Are there adequate connections?" max_length="40" name="are_there_adequate_connections" type="string">
+            <choice>
+                <element inactive_on_update="false" label="yes" sequence="0" value="yes"/>
+                <element inactive_on_update="false" label="no" sequence="1" value="no"/>
+            </choice>
+        </element>
+        <element label="Asset Tag" max_length="40" name="asset_tag" type="string"/>
+        <element label="Assignee Group" max_length="40" name="assignee_group" type="string"/>
+        <element choice="1" label="Category" max_length="40" name="category" type="string">
+            <choice>
+                <element inactive_on_update="false" label="AD HOC" sequence="0" value="ad hoc"/>
+                <element inactive_on_update="false" label="BAU" sequence="1" value="bau"/>
+                <element inactive_on_update="false" label="BAU Asset Inventory" sequence="2" value="bau asset inventory"/>
+                <element inactive_on_update="false" label="iCTO Asset Transfer" sequence="3" value="icto asset transfer"/>
+                <element inactive_on_update="false" label="Project Clean Sweep" sequence="4" value="project clean sweep"/>
+                <element inactive_on_update="false" label="RES" sequence="5" value="res"/>
+                <element inactive_on_update="false" label="Remediation" sequence="6" value="remediation"/>
+                <element inactive_on_update="false" label="Security Uplift" sequence="7" value="security uplift"/>
+                <element inactive_on_update="false" label="Quarterly Asset Inventory" sequence="8" value="quarterly asset inventory"/>
+                <element inactive_on_update="false" label="West Site Visit Project" sequence="9" value="west site visit project"/>
+            </choice>
+        </element>
+        <element label="Client Access Ticket Number" max_length="255" name="client_access_ticket_number" type="string"/>
+        <element label="Client Access Window End" max_length="40" name="client_access_window_end" type="glide_date_time"/>
+        <element label="Client Access Window Start" max_length="40" name="client_access_window_start" type="glide_date_time"/>
+        <element label="Cost % Allocation 1" max_length="40" name="cost_allocation_1" type="integer"/>
+        <element label="Cost % Allocation 2" max_length="40" name="cost_allocation_2" type="integer"/>
         <element label="Description" max_length="40" name="description" type="string"/>
         <element default="javascript:global.getNextObjNumberPadded();" label="External Id" max_length="40" name="external_id" read_only="true" type="string"/>
+        <element label="Form Completed" max_length="40" name="form_completed" type="boolean"/>
+        <element label="Hard Drive Removed" max_length="40" name="hard_drive_removed" type="boolean"/>
+        <element label="Hostname" max_length="40" name="hostname" type="string"/>
         <element label="Id" max_length="40" name="id" type="string"/>
+        <element choice="1" label="Is special access required?" max_length="40" name="is_special_access_required" type="string">
+            <choice>
+                <element inactive_on_update="false" label="yes" sequence="0" value="yes"/>
+                <element inactive_on_update="false" label="no" sequence="1" value="no"/>
+            </choice>
+        </element>
+        <element choice="1" label="Is there adequate power?" max_length="40" name="is_there_adequate_power" type="string">
+            <choice>
+                <element inactive_on_update="false" label="yes" sequence="0" value="yes"/>
+                <element inactive_on_update="false" label="no" sequence="1" value="no"/>
+            </choice>
+        </element>
+        <element choice="1" label="Is there adequate space in the rack?" max_length="40" name="is_there_adequate_space_in_the_rack" type="string">
+            <choice>
+                <element inactive_on_update="false" label="yes" sequence="0" value="yes"/>
+                <element inactive_on_update="false" label="no" sequence="1" value="no"/>
+            </choice>
+        </element>
+        <element choice="1" label="Is this a follow up to previous work?" max_length="40" name="is_this_a_follow_up_to_previous_work" type="string">
+            <choice>
+                <element inactive_on_update="false" label="yes" sequence="0" value="yes"/>
+                <element inactive_on_update="false" label="no" sequence="1" value="no"/>
+            </choice>
+        </element>
+        <element label="Make" max_length="40" name="make" type="string"/>
+        <element label="Model" max_length="40" name="model" type="string"/>
+        <element label="New Hard Drive serial number" max_length="40" name="new_hard_drive_serial_number" type="string"/>
+        <element label="Old Hard Drive serial number" max_length="40" name="old_hard_drive_serial_number" type="string"/>
+        <element label="Original Assignee Group" max_length="40" name="original_assignee_group" type="string"/>
+        <element label="Primary Cost Center" max_length="40" name="primary_cost_center" type="string"/>
+        <element choice="1" label="Priority" max_length="40" name="priority" type="string">
+            <choice>
+                <element inactive_on_update="false" label="P1S1" sequence="0" value="p1s1"/>
+                <element inactive_on_update="false" label="P1S2" sequence="1" value="p1s2"/>
+                <element inactive_on_update="false" label="P1S3" sequence="2" value="p1s3"/>
+                <element inactive_on_update="false" label="P2" sequence="3" value="p2"/>
+                <element inactive_on_update="false" label="P3" sequence="4" value="p3"/>
+                <element inactive_on_update="false" label="P4" sequence="5" value="p4"/>
+                <element inactive_on_update="false" label="Standard" sequence="6" value="standard"/>
+            </choice>
+        </element>
+        <element label="Rack/Grid Location" max_length="40" name="rack_grid_location" type="string"/>
         <element label="Requested By" max_length="40" name="requested_by" type="string"/>
         <element label="Requested_By.Email" max_length="40" name="requested_by_email" type="string"/>
         <element label="Requested_By.Name" max_length="40" name="requested_by_name" type="string"/>
         <element label="Requested End" max_length="40" name="requested_end" type="glide_date_time"/>
-        <element choice="1" dependent="site_name" dependent_on_field="site_name" label="Site" max_length="80" name="site" type="string" use_dependent_field="true">
+        <element choice="1" label="Requested SLO" max_length="40" name="requested_slo" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Scheduled Event" sequence="0" value="scheduled event"/>
+                <element inactive_on_update="false" label="4 Hours" sequence="1" value="4 hours"/>
+            </choice>
+        </element>
+        <element label="RMA" max_length="40" name="rma" type="string"/>
+        <element label="SAS Number" max_length="40" name="sas_number" type="string"/>
+        <element label="Secondary Cost Center" max_length="40" name="secondary_cost_center" type="string"/>
+        <element label="Serial Number" max_length="40" name="serial_number" type="string"/>
+        <element choice="1" label="Service Desk Application" max_length="40" name="service_desk_application" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Service Manager" sequence="0" value="service manager"/>
+                <element inactive_on_update="false" label="WRM" sequence="1" value="wrm"/>
+                <element inactive_on_update="false" label="EURC" sequence="2" value="eurc"/>
+                <element inactive_on_update="false" label="Prime" sequence="3" value="prime"/>
+            </choice>
+        </element>
+        <element label="Service Desk Ticket Number&#9;" max_length="40" name="service_desk_ticket_number" type="string"/>
+        <element label="Shipping Company" max_length="40" name="shipping_company" type="string"/>
+        <element choice="1" dependent="site_name" dependent_on_field="site_name" label="Site" mandatory="true" max_length="80" name="site" type="string" use_dependent_field="true">
             <choice>
                 <element inactive_on_update="false" label="a3ac00000003gbyAAA" sequence="0" value="a3ac00000003gbyAAA"/>
                 <element inactive_on_update="false" label="a3ac00000003gN6AAI" sequence="0" value="a3ac00000003gN6AAI"/>
@@ -42,12 +146,27 @@
         <element label="Site Street" max_length="40" name="site_street" type="string"/>
         <element label="Site Timezone" max_length="40" name="site_timezone" type="string"/>
         <element label="Site ZipPostalCode" max_length="40" name="site_zippostalcode" type="string"/>
+        <element choice="1" label="SLA" max_length="40" name="sla" type="string">
+            <choice>
+                <element inactive_on_update="false" label="4 Hours" sequence="0" value="4 hours"/>
+                <element inactive_on_update="false" label="Same Day" sequence="1" value="same day"/>
+                <element inactive_on_update="false" label="Next Day" sequence="2" value="next day"/>
+                <element inactive_on_update="false" label="N/A" sequence="3" value="n/a"/>
+            </choice>
+        </element>
         <element label="SREQ ID" max_length="40" name="sreq_id" type="string"/>
         <element label="Start" max_length="40" name="start" type="glide_date_time"/>
         <element label="Status" max_length="40" name="status" type="string"/>
         <element label="Submitted On" max_length="40" name="submitted_on" type="glide_date_time"/>
-        <element label="Summary" max_length="40" name="summary" type="string"/>
-        <element choice="1" dependent="task_type_name" dependent_on_field="task_type_name" label="Task Type" max_length="40" name="task_type" type="string" use_dependent_field="true">
+        <element label="Summary" mandatory="true" max_length="40" name="summary" type="string"/>
+        <element choice="1" label="Support Type" max_length="40" name="support_type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="BAU" sequence="0" value="bau"/>
+                <element inactive_on_update="false" label="Projects" sequence="1" value="projects"/>
+                <element inactive_on_update="false" label="Initiatives" sequence="2" value="initiatives"/>
+            </choice>
+        </element>
+        <element choice="1" dependent="task_type_name" dependent_on_field="task_type_name" label="Task Type" mandatory="true" max_length="40" name="task_type" type="string" use_dependent_field="true">
             <choice>
                 <element inactive="true" inactive_on_update="true" label="a3Vc0000000bGjUEAU" sequence="0" value="a3Vc0000000bGjUEAU"/>
                 <element inactive="true" inactive_on_update="true" label="Choice 1" sequence="0" value="Choice 1"/>
@@ -68,6 +187,13 @@
         <element label="Task Type Category" max_length="40" name="task_type_category" type="string"/>
         <element label="Task Type Name" max_length="40" name="task_type_name" type="string"/>
         <element attributes="edge_encryption_enabled=true" label="test field" max_length="40" name="test_field" type="string"/>
+        <element label="Tracking Number" max_length="40" name="tracking_number" type="string"/>
+        <element choice="1" label="Was device shipped?" max_length="40" name="was_device_shipped" type="string">
+            <choice>
+                <element inactive_on_update="false" label="yes" sequence="0" value="yes"/>
+                <element inactive_on_update="false" label="no" sequence="1" value="no"/>
+            </choice>
+        </element>
         <index name="index">
             <element name="sreq_id"/>
         </index>

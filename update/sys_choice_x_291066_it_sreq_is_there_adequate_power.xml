@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="is_there_adequate_power" table="x_291066_it_sreq" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>is_there_adequate_power</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>yes</label>
+            <language>en</language>
+            <name>x_291066_it_sreq</name>
+            <sequence>0</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 20:32:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>9023c4334f062300cd558c318110c720</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 20:32:37</sys_updated_on>
+            <value>yes</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>is_there_adequate_power</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>no</label>
+            <language>en</language>
+            <name>x_291066_it_sreq</name>
+            <sequence>1</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 20:32:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d023c4334f062300cd558c318110c721</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 20:32:37</sys_updated_on>
+            <value>no</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>is_there_adequate_power</element>
+            <name>x_291066_it_sreq</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-12-04 20:32:37</sys_created_on>
+            <sys_id>d823c4334f062300cd558c318110c720</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>is_there_adequate_power</sys_name>
+            <sys_package display_value="IT" source="x_291066_it">ad98ba3a4f3de300cd558c318110c7ec</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="IT">ad98ba3a4f3de300cd558c318110c7ec</sys_scope>
+            <sys_update_name>sys_choice_x_291066_it_sreq_is_there_adequate_power</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-12-04 20:32:37</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>
